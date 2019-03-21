@@ -9,4 +9,7 @@ router.get('/', universeEventController.index)
 //Displays the individual ID
 router.get('/:id', universeEventController.show)
 
+//Creates a New Universe Event Card
+router.post('/', universeEventController.create)
+
 module.exports = router

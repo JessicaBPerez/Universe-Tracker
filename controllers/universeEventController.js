@@ -13,6 +13,12 @@ const universeEventController = {
             res.json(event)
         })
     },
+    //Creates a New Universe Fact
+    create: (req, res) => {
+        UniverseEvent.create(req.body).then(event => {
+            res.json(event)
+        })
+    },
 }
 
 module.exports = universeEventController
