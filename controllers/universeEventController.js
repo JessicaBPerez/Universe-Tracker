@@ -35,6 +35,11 @@ const universeEventController = {
             res.json(event)
         })
     },
+    delete: (req, res) => {
+        UniverseEvent.findByIdAndDelete(req.params.id).then(event => {
+            res.json(event)
+        })
+    }
 }
 
 module.exports = universeEventController

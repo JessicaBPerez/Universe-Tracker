@@ -15,4 +15,6 @@ router.post('/', universeEventController.create)
 //Updates a Single Event
 router.put('/:id', universeEventController.update)
 
+router.delete('/:id', universeEventController.delete)
+
 module.exports = router
