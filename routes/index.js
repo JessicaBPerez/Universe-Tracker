@@ -6,4 +6,7 @@ const universeEventController = require('../controllers/universeEventController.
 //Displays all of the Universe Events
 router.get('/', universeEventController.index)
 
+//Displays the individual ID
+router.get('/:id', universeEventController.show)
+
 module.exports = router
