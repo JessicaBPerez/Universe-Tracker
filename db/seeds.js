@@ -22,12 +22,13 @@ const bigBang = new UniverseEvent({
     additionalInfo: [bigBangInfo]
 })
 
+
 UniverseEvent.remove({})
     .then(() => UniverseEvent.create([bigBang]))
 Info.remove({})
     .then(() => Info.create([bigBangInfo]))
-    .then(( => {
-        console.log("Database seeded successfully")
+    .then(() => {
+        console.log("seeded successfully");
         mongoose.connection.close();
-    }))
-    .catch(err => console.log(err, "error! couldn't seed"))
+    })
+    .catch(err => console.log(err, "error!"));
