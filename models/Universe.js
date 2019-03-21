@@ -9,7 +9,7 @@ const Info = new Schema({
     threatLevel: String
 })
 
-const Universe = new Schema({
+const UniverseEvent = new Schema({
     eventImg: String,
     eventName: String,
     eventCategoryThreat: String,
@@ -19,6 +19,6 @@ const Universe = new Schema({
 })
 
 module.exports = {
-    Universe: mongoose.model('Universe', Universe),
+    UniverseEvent: mongoose.model('UniverseEvent', UniverseEvent),
     Info: mongoose.model('Info', Info)
 }
