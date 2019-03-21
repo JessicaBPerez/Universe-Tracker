@@ -41,9 +41,9 @@ const abiogenesis = new UniverseEvent({
 
 
 UniverseEvent.remove({})
-    .then(() => UniverseEvent.create([bigBang]))
+    .then(() => UniverseEvent.create([bigBang, abiogenesis]))
 Info.remove({})
-    .then(() => Info.create([bigBangInfo]))
+    .then(() => Info.create([bigBangInfo, abiogenesisInfo]))
     .then(() => {
         console.log("seeded successfully");
         mongoose.connection.close();
