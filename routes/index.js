@@ -12,4 +12,7 @@ router.get('/:id', universeEventController.show)
 //Creates a New Universe Event Card
 router.post('/', universeEventController.create)
 
+//Updates a Single Event
+router.put('/:id', universeEventController.update)
+
 module.exports = router

@@ -1,5 +1,6 @@
 const { UniverseEvent } = require('../models/Universe.js')
 
+
 const universeEventController = {
     index: (req, res) => {
         UniverseEvent.find().then((events) => {
@@ -18,6 +19,18 @@ const universeEventController = {
         UniverseEvent.create(req.body).then(event => {
             res.json(event)
         })
+    },
+    update: async(req, res) => {
+        try {
+            const eventId = req.params.id
+            console.log(eventId)
+            const updatedEvent = req.body
+            const savedEvent = await UniverseEvent.findByIdAndUpdate(eventId, updatedEvent)
+            res.json(savedEvent)
+        } catch (err) {
+            console.log(err)
+            res.status(500).json(err)
+        }
     },
 }
 
