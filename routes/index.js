@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const universeEventController = require('../controllers/universeEventController.js')
+const infoController = require('../controllers/infoController')
 
 //Displays all of the Universe Events
 router.get('/', universeEventController.index)
@@ -12,9 +13,14 @@ router.get('/:id', universeEventController.show)
 //Creates a New Universe Event Card
 router.post('/', universeEventController.create)
 
-//Updates a Single Event
+//Updates a Single Universe Event
 router.put('/:id', universeEventController.update)
 
 router.delete('/:id', universeEventController.delete)
+
+//Info Events
+router.get('/:id/info/:infoId', infoController.show)
+
+router.post('/:id/info/:infoId', infoController.create)
 
 module.exports = router
