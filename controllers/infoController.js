@@ -2,6 +2,9 @@ const { UniverseEvent, Info, Comment } = require('../models/Universe.js')
 
 const infoController = {
     show: (req, res) => {
+        console.log('HEY LOOK HERE THIS IS WHERE STUFF IS')
+        const entireUrl = '/' + req.params.id + '/info/' + req.params.infoId
+        console.log(entireUrl)
         let { id, infoId } = req.params
         console.log(id)
         console.log(infoId)

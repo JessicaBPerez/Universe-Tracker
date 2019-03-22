@@ -3,13 +3,15 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
+import UniverseEvents from "./components/UniverseEvents";
+import Info from "./components/Info.jsx";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      facts: [],
-      newFacts: {
+      events: [],
+      newEvents: {
         eventImg: "",
         eventName: "",
         eventCategoryThreat: "",
@@ -25,7 +27,7 @@ class App extends Component {
   componentDidMount() {
     axios.get(`/api/events`).then(response => {
       this.setState({
-        facts: response.data
+        events: response.data
       });
     });
   }
@@ -36,10 +38,10 @@ class App extends Component {
         <Navbar />
         <Router>
           <Switch>
-            <Route />
+            <Route exact path="/" component={UniverseEvents} />
+            <Route exact path="/events/:id/info/:infoId" component={Info} />
           </Switch>
         </Router>
-        <h1>Hey, Jess. This is where your app will go.</h1>
       </div>
     );
   }
