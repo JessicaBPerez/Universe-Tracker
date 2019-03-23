@@ -77,6 +77,14 @@ class UniverseEvents extends Component {
     });
   };
 
+  //Handles form change event value
+  handleFormChange = event => {
+    //Preserves Event State
+    const cloneNewEvent = { ...this.state.newEvent };
+    cloneNewEvent[event.target.name] = event.target.value;
+    this.setState({ newEvents: cloneNewEvent });
+  };
+
   render() {
     // const events = this.state.events.map((event, index) => {
     //   //   let pathname = `/events/${event._id}/info/${infoId}`;
@@ -123,9 +131,34 @@ class UniverseEvents extends Component {
         {events}
         <h1>This is where your Universe Events will go.</h1>
         <h3>New Event Below</h3>
-        <button onClick={this.displayUniverseEventForm}>Add New Event</button>
+        {/* <button onClick={this.displayUniverseEventForm}>Add New Event</button> */}
         <div>
           <strong>Create a New Universe Event</strong>
+          {/* {this.state.isUniverseEventFormDisplayed ? ( */}
+          <form>
+            <div>
+              <label htmlFor="eventImg">Event Image</label>
+              <input
+                id="eventImg"
+                type="text"
+                name="eventImg"
+                onChange={this.handleFormChange}
+                value={this.state.newEvents.eventImg}
+              />
+            </div>
+            <div>
+              <label htmlFor="eventImg">Event Name</label>
+              <input
+                id="eventName"
+                type="text"
+                name="eventName"
+                onChange={this.handleChange}
+                // value={this.state.newCreature.name}
+              />
+            </div>
+            <button>CreateIt!</button>
+          </form>
+          {/* ) : null} */}
         </div>
       </div>
     );
