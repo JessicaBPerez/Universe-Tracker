@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import Info from "./Info.jsx";
+import Info from "./Info.jsx";
 
 class UniverseEvents extends Component {
   state = {
@@ -23,6 +23,32 @@ class UniverseEvents extends Component {
     console.log("Hey! You got me!!");
     this.getAllEvents();
   };
+
+  //what I JUST added
+  componentDidMount() {
+    console.log("infoId: ", this.props.match.params.infoId);
+    console.log("Hey, you're getting each event!");
+    this.getIndividualEvent();
+  }
+  //Here too
+  //   getIndividualEvent = () => {
+  //     axios
+  //       .get(
+  //         `/api/events/${this.props.match.params.id}/info/${
+  //           this.props.match.params.infoId
+  //         }`
+  //       )
+  //       .then(response => {
+  //         console.log(response.data);
+
+  //         this.setState({
+  //           info: response.data
+  //         });
+  //       })
+  //       .catch(err => {
+  //         console.log("Go back, goof!", err);
+  //       });
+  //   };
 
   //Function to get all Facts from axios via our API
   getAllEvents = () => {
@@ -52,7 +78,7 @@ class UniverseEvents extends Component {
       })
       .then(response => {
         const eventList = [...this.state.events];
-        eventList.unshift(response.data);
+        eventList.push(response.data);
         this.setState({
           newEvents: {
             eventImg: "",
@@ -98,15 +124,8 @@ class UniverseEvents extends Component {
   };
 
   render() {
-    // const events = this.state.events.map((event, index) => {
-    //   //   let pathname = `/events/${event._id}/info/${infoId}`;
-    //   return(
-    //       {event.eventImg}
-    //   )
-    // });
-
     const events = this.state.events.map((event, index) => {
-      //   let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
+      let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
       return (
         <div>
           <div>{/* <img src={event.eventImg} alt={event.eventName} /> */}</div>
@@ -125,7 +144,9 @@ class UniverseEvents extends Component {
               />
               <div className="card-body">
                 <p className="card-text">
+                  {event.eventName}
                   {/* <Link to={pathname}>{event.eventName}</Link> */}
+                  <Link to={pathname}>{event.eventName}</Link>
                 </p>
                 <p>Category Threat: {event.eventCategoryThreat}</p>
                 <p>Event Location: {event.eventLocation}</p>
@@ -188,7 +209,7 @@ class UniverseEvents extends Component {
               </div>
               <div>
                 <label htmlFor="eventDescription">Event Description</label>
-                <input
+                <textarea
                   id="eventDescription"
                   type="text"
                   name="eventDescription"
