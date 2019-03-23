@@ -39,7 +39,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={UniverseEvents} />
-            <Route exact path="/events/:id/info/:infoId" component={Info} />
+            {/* <Route exact path="/events/:id/info/:infoId" component={Info} /> */}
+            <Route path="/events/:id" component={Info} />
           </Switch>
         </Router>
       </div>

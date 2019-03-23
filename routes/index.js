@@ -19,7 +19,10 @@ router.put('/:id', universeEventController.update)
 router.delete('/:id', universeEventController.delete)
 
 //Info Events
-router.get('/:id/info/:infoId', infoController.show)
+//old one
+
+// router.get('/:id/info/:infoId', infoController.show)
+router.get('/:id', infoController.show)
 
 router.post('/:id/info/:infoId', infoController.create)
 

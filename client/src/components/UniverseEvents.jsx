@@ -125,7 +125,8 @@ class UniverseEvents extends Component {
 
   render() {
     const events = this.state.events.map((event, index) => {
-      let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
+      //   let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
+      let pathname = `/events/${event._id}`;
       return (
         <div>
           <div>{/* <img src={event.eventImg} alt={event.eventName} /> */}</div>
@@ -144,8 +145,6 @@ class UniverseEvents extends Component {
               />
               <div className="card-body">
                 <p className="card-text">
-                  {event.eventName}
-                  {/* <Link to={pathname}>{event.eventName}</Link> */}
                   <Link to={pathname}>{event.eventName}</Link>
                 </p>
                 <p>Category Threat: {event.eventCategoryThreat}</p>

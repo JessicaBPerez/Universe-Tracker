@@ -5,7 +5,8 @@ class Info extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      singleEvent: this.props.match.infoId,
+      //   singleEvent: this.props.match.infoId,
+      singleEvent: this.props.match.params.id,
 
       info: {},
       additionalInfo: {
@@ -20,19 +21,14 @@ class Info extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log("infoId: ", this.props.match.params.infoId);
-    console.log("Hey, you're getting each event!");
-    this.getIndividualEvent();
-  }
+  componentDidMount = () => {
+    console.log("HEY!!!");
+    this.getSingleEvent();
+  };
 
-  getIndividualEvent = () => {
+  getSingleEvent = () => {
     axios
-      .get(
-        `/api/events/${this.props.match.params.id}/info/${
-          this.props.match.params.infoId
-        }`
-      )
+      .get(`/api/events/${this.props.match.params.id}`)
       .then(response => {
         console.log(response.data);
 
@@ -41,9 +37,46 @@ class Info extends Component {
         });
       })
       .catch(err => {
-        console.log("Go back, goof!", err);
+        console.log("Go back, you goffy goober!", err);
       });
   };
+
+  //   getIndividualEvent = () => {
+  //     axios.get(`api/events/${this.props.match.params.id}`).then(response => {
+  //       console.log("This is the response data:", response.data);
+  //       this.setState({
+  //         info: response.data
+  //       });
+  //     });
+  //       .catch(err => {
+  //         console.log("Go back, goof!", err);
+  //       });
+  //   };
+
+  //   componentDidMount() {
+  //     console.log("infoId: ", this.props.match.params.infoId);
+  //     console.log("Hey, you're getting each event!");
+  //     this.getIndividualEvent();
+  //   }
+
+  //   getIndividualEvent = () => {
+  //     axios
+  //       .get(
+  //         `/api/events/${this.props.match.params.id}/info/${
+  //           this.props.match.params.infoId
+  //         }`
+  //       )
+  //       .then(response => {
+  //         console.log(response.data);
+
+  //         this.setState({
+  //           info: response.data
+  //         });
+  //       })
+  //       .catch(err => {
+  //         console.log("Go back, goof!", err);
+  //       });
+  //   };
   render() {
     return (
       <div>
