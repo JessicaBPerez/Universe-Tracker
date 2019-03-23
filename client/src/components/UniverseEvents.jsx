@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import styled, { keyframes } from "styled-components";
 import Info from "./Info.jsx";
 
 class UniverseEvents extends Component {

@@ -70,7 +70,7 @@ class Info extends Component {
       <div>
         <h1>This is where your individual info will go.</h1>
         <h2>This is where you info will go. Look below for reference.</h2>
-        {this.state.info.eventDescription}
+        <div className="text-white">{this.state.info.eventDescription}</div>
       </div>
     );
   }

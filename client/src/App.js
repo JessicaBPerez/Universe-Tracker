@@ -7,6 +7,11 @@ import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
 import styled, { keyframes } from "styled-components";
 
+const slide = keyframes`
+  from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+`;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +40,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App background">
+      <div className="App hero-bkg-animated">
         <div>
           <Navbar />
           <Router>
