@@ -129,17 +129,16 @@ class UniverseEvents extends Component {
       let pathname = `/events/${event._id}`;
       return (
         <div>
+          <h2 className="text-white">Hi!</h2>
           <div>
-            <div>
-              {/* <img src={event.eventImg} alt={event.eventName} /> */}
-            </div>
-            {/* <Link to={pathname}>{event.eventName}</Link> */}
-            {/* <div>{event.eventCategoryThreat}</div>
-          <div>{event.eventLocation}</div>
-          <div>{event.eventDescription}</div> */}
-
-            {/* <div>{event.additionalInfo}</div> */}
-            <section className="flex-container card-flex card-margin">
+            <section
+              className=" card-margin card-style"
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                flexDirection: "row"
+              }}
+            >
               <div className="card" style={{ width: "30rem" }}>
                 <img
                   className="card-img-top"
@@ -153,6 +152,9 @@ class UniverseEvents extends Component {
                   <p>Category Threat: {event.eventCategoryThreat}</p>
                   <p>Event Location: {event.eventLocation}</p>
                   <p>Event Description: {event.eventDescription}</p>
+                  <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               </div>
             </section>
