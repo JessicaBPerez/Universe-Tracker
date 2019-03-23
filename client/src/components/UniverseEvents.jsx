@@ -131,34 +131,64 @@ class UniverseEvents extends Component {
         {events}
         <h1>This is where your Universe Events will go.</h1>
         <h3>New Event Below</h3>
-        {/* <button onClick={this.displayUniverseEventForm}>Add New Event</button> */}
+        <button onClick={this.displayUniverseEventForm}>Add New Event</button>
         <div>
           <strong>Create a New Universe Event</strong>
-          {/* {this.state.isUniverseEventFormDisplayed ? ( */}
-          <form>
-            <div>
-              <label htmlFor="eventImg">Event Image</label>
-              <input
-                id="eventImg"
-                type="text"
-                name="eventImg"
-                onChange={this.handleFormChange}
-                value={this.state.newEvents.eventImg}
-              />
-            </div>
-            <div>
-              <label htmlFor="eventImg">Event Name</label>
-              <input
-                id="eventName"
-                type="text"
-                name="eventName"
-                onChange={this.handleChange}
-                // value={this.state.newCreature.name}
-              />
-            </div>
-            <button>CreateIt!</button>
-          </form>
-          {/* ) : null} */}
+          {this.state.isUniverseEventFormDisplayed ? (
+            <form>
+              <div>
+                <label htmlFor="eventImg">Event Image</label>
+                <input
+                  id="eventImg"
+                  type="text"
+                  name="eventImg"
+                  onChange={this.handleFormChange}
+                  value={this.state.newEvents.eventImg}
+                />
+              </div>
+              <div>
+                <label htmlFor="eventName">Event Name</label>
+                <input
+                  id="eventName"
+                  type="text"
+                  name="eventName"
+                  onChange={this.handleFormChange}
+                  value={this.state.newEvents.eventName}
+                />
+              </div>
+              <div>
+                <label htmlFor="eventCategoryThreat">Event Threat</label>
+                <input
+                  id="eventCategoryThreat"
+                  type="text"
+                  name="eventCategoryThreat"
+                  onChange={this.handleFormChange}
+                  value={this.state.newEvents.eventCategoryThreat}
+                />
+              </div>
+              <div>
+                <label htmlFor="eventLocation">Event Location</label>
+                <input
+                  id="eventLocation"
+                  type="text"
+                  name="eventLocation"
+                  onChange={this.handleFormChange}
+                  value={this.state.newEvents.eventLocation}
+                />
+              </div>
+              <div>
+                <label htmlFor="eventDescription">Event Description</label>
+                <input
+                  id="eventDescription"
+                  type="text"
+                  name="eventDescription"
+                  onChange={this.handleFormChange}
+                  value={this.state.newEvents.eventDescription}
+                />
+              </div>
+              <button>CreateIt!</button>
+            </form>
+          ) : null}
         </div>
       </div>
     );
