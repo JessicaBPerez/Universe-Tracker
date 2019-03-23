@@ -47,26 +47,38 @@ class UniverseEvents extends Component {
         eventName: this.state.newEvents.eventName,
         eventCategoryThreat: this.state.newEvents.eventCategoryThreat,
         eventLocation: this.state.newEvents.eventLocation,
-        eventDescription: this.state.newEvents.eventDescription,
-        additionalInfo: this.state.newEvents.additionalInfo
+        eventDescription: this.state.newEvents.eventDescription
+        // additionalInfo: this.state.newEvents.additionalInfo
       })
       .then(response => {
         const eventList = [...this.state.events];
-        eventList.push(response.data);
+        eventList.unshift(response.data);
         this.setState({
           newEvents: {
             eventImg: "",
             eventName: "",
             eventCategoryThreat: "",
             eventLocation: "",
-            eventDescription: "",
-            additionalInfo: []
+            eventDescription: ""
+            // additionalInfo: []
           },
           isUniverseEventFormDisplayed: false,
           events: eventList
         });
       });
   };
+
+  //   createAnEvent = event => {
+  //     event.preventDefault();
+  //     axios.post(`/api/events`).then(response => {
+  //       console.log("Hey, this is my response", response.data);
+  //       const newEvents = [this.state.events];
+  //       newEvents.unshift(response.data);
+  //       this.setState({
+  //         events: newEvents
+  //       });
+  //     });
+  //   };
 
   //Toggles the Edit form
   displayUniverseEventForm = () => {
@@ -94,16 +106,14 @@ class UniverseEvents extends Component {
     // });
 
     const events = this.state.events.map((event, index) => {
-      let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
+      //   let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
       return (
         <div>
-          <div>
-            <img src={event.eventImg} alt={event.eventName} />
-          </div>
-          <Link to={pathname}>{event.eventName}</Link>
-          <div>{event.eventCategoryThreat}</div>
+          <div>{/* <img src={event.eventImg} alt={event.eventName} /> */}</div>
+          {/* <Link to={pathname}>{event.eventName}</Link> */}
+          {/* <div>{event.eventCategoryThreat}</div>
           <div>{event.eventLocation}</div>
-          <div>{event.eventDescription}</div>
+          <div>{event.eventDescription}</div> */}
 
           {/* <div>{event.additionalInfo}</div> */}
           <section className="flex-container card-flex">
@@ -115,7 +125,7 @@ class UniverseEvents extends Component {
               />
               <div className="card-body">
                 <p className="card-text">
-                  <Link to={pathname}>{event.eventName}</Link>
+                  {/* <Link to={pathname}>{event.eventName}</Link> */}
                 </p>
                 <p>Category Threat: {event.eventCategoryThreat}</p>
                 <p>Event Location: {event.eventLocation}</p>
@@ -135,7 +145,7 @@ class UniverseEvents extends Component {
         <div>
           <strong>Create a New Universe Event</strong>
           {this.state.isUniverseEventFormDisplayed ? (
-            <form>
+            <form onSubmit={this.createAnEvent}>
               <div>
                 <label htmlFor="eventImg">Event Image</label>
                 <input
