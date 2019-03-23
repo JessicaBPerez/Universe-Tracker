@@ -1,14 +1,141 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Bungee+Inline|Josefin+Sans|Limelight|Megrim|Monoton|Oleo+Script|Orbitron|Playfair+Display|Prata|Press+Start+2P|Wallpoet');
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@media (min-width:992px) {
+    #mainNav {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        transition: padding-top .3s, padding-bottom .3s;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.navbarstyle {
+    background-image: url('../src/images/Space.jpg');
+}
+
+.brand-properties {
+    font-family: Orbitron;
+}
+
+.navbar-brand {
+    font-size: 2.2rem!important;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255)!important;
+    font-family: "Josefin sans";
+    font-size: 1.1rem;
+}
+
+.card-margin {
+    margin-top: 8rem;
+}
+
+.navbar-dark .navbar-toggler {
+    color: hsla(0, 0%, 100%, .5);
+    border-color: hsla(0, 0%, 100%, .1);
+}
+
+.hero-bkg-animated {
+    background: gray url(https://subtlepatterns.com/patterns/geometry2.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    height: 300px;
+    padding-top: 120px;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+}
+
+.hero-bkg-animated h1 {
+    font-family: sans-serif;
+}
+
+@-webkit-keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -400px 0;
+    }
+}
+
+@media (min-width:992px) {
+    .navbar-expand-lg {
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Corben:700');
+h1 {
+    font-family: 'Corben', cursive;
+    font-size: 6rem;
+    color: white;
+    letter-spacing: 0.1rem;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
+}
+
+.hero {
+    background-image: radial-gradient(50% 176%, #253854 80%, #0a1b23 100%);
+    min-height: 100vh;
+    min-height: 30rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    &__content {
+        position: relative;
+        align-self: center;
+        padding: 3rem 0;
+    }
+}
+
+.snow {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.snow .svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#snow-top-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    animation: fall 22.5s infinite linear;
+}
+
+#snow-bottom-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    animation: fall 45s infinite linear;
+}
+
+@keyframes fall {
+    100% {
+        transform: translateY(0);
+    }
 }

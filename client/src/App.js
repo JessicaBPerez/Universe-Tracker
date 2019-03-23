@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
+import styled, { keyframes } from "styled-components";
 
 class App extends Component {
   constructor(props) {
@@ -34,15 +35,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Navbar />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={UniverseEvents} />
-            {/* <Route exact path="/events/:id/info/:infoId" component={Info} /> */}
-            <Route path="/events/:id" component={Info} />
-          </Switch>
-        </Router>
+      <div className="App background">
+        <div>
+          <Navbar />
+          <Router>
+            <Switch>
+              <Route exact path="/" component={UniverseEvents} />
+              {/* <Route exact path="/events/:id/info/:infoId" component={Info} /> */}
+              <Route path="/events/:id" component={Info} />
+            </Switch>
+          </Router>
+        </div>
       </div>
     );
   }

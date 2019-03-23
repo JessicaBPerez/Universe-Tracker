@@ -41,18 +41,6 @@ class Info extends Component {
       });
   };
 
-  //   getIndividualEvent = () => {
-  //     axios.get(`api/events/${this.props.match.params.id}`).then(response => {
-  //       console.log("This is the response data:", response.data);
-  //       this.setState({
-  //         info: response.data
-  //       });
-  //     });
-  //       .catch(err => {
-  //         console.log("Go back, goof!", err);
-  //       });
-  //   };
-
   //   componentDidMount() {
   //     console.log("infoId: ", this.props.match.params.infoId);
   //     console.log("Hey, you're getting each event!");

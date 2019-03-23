@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import styled, { keyframes } from "styled-components";
 import Info from "./Info.jsx";
 
 class UniverseEvents extends Component {
@@ -17,7 +18,7 @@ class UniverseEvents extends Component {
     isUniverseEventFormDisplayed: false
   };
 
-  //2. use the componentDidMount lifecycle method
+  //Use the componentDidMount lifecycle method
   // to execute our API call as soon as the component mounts
   componentDidMount = () => {
     console.log("Hey! You got me!!");
@@ -73,8 +74,8 @@ class UniverseEvents extends Component {
         eventName: this.state.newEvents.eventName,
         eventCategoryThreat: this.state.newEvents.eventCategoryThreat,
         eventLocation: this.state.newEvents.eventLocation,
-        eventDescription: this.state.newEvents.eventDescription
-        // additionalInfo: this.state.newEvents.additionalInfo
+        eventDescription: this.state.newEvents.eventDescription,
+        additionalInfo: this.state.newEvents.additionalInfo
       })
       .then(response => {
         const eventList = [...this.state.events];
@@ -85,8 +86,8 @@ class UniverseEvents extends Component {
             eventName: "",
             eventCategoryThreat: "",
             eventLocation: "",
-            eventDescription: ""
-            // additionalInfo: []
+            eventDescription: "",
+            additionalInfo: []
           },
           isUniverseEventFormDisplayed: false,
           events: eventList
@@ -129,36 +130,41 @@ class UniverseEvents extends Component {
       let pathname = `/events/${event._id}`;
       return (
         <div>
-          <div>{/* <img src={event.eventImg} alt={event.eventName} /> */}</div>
-          {/* <Link to={pathname}>{event.eventName}</Link> */}
-          {/* <div>{event.eventCategoryThreat}</div>
+          <div>
+            <div>
+              {/* <img src={event.eventImg} alt={event.eventName} /> */}
+            </div>
+            {/* <Link to={pathname}>{event.eventName}</Link> */}
+            {/* <div>{event.eventCategoryThreat}</div>
           <div>{event.eventLocation}</div>
           <div>{event.eventDescription}</div> */}
 
-          {/* <div>{event.additionalInfo}</div> */}
-          <section className="flex-container card-flex">
-            <div className="card" style={{ width: "30rem" }}>
-              <img
-                className="card-img-top"
-                src={event.eventImg}
-                alt={event.eventName}
-              />
-              <div className="card-body">
-                <p className="card-text">
-                  <Link to={pathname}>{event.eventName}</Link>
-                </p>
-                <p>Category Threat: {event.eventCategoryThreat}</p>
-                <p>Event Location: {event.eventLocation}</p>
-                <p>Event Description: {event.eventDescription}</p>
+            {/* <div>{event.additionalInfo}</div> */}
+            <section className="flex-container card-flex card-margin">
+              <div className="card" style={{ width: "30rem" }}>
+                <img
+                  className="card-img-top"
+                  src={event.eventImg}
+                  alt={event.eventName}
+                />
+                <div className="card-body">
+                  <p className="card-text">
+                    <Link to={pathname}>{event.eventName}</Link>
+                  </p>
+                  <p>Category Threat: {event.eventCategoryThreat}</p>
+                  <p>Event Location: {event.eventLocation}</p>
+                  <p>Event Description: {event.eventDescription}</p>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       );
     });
     return (
       <div>
         {events}
+
         <h1>This is where your Universe Events will go.</h1>
         <h3>New Event Below</h3>
         <button onClick={this.displayUniverseEventForm}>Add New Event</button>

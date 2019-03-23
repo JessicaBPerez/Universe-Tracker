@@ -1,30 +1,86 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+
+//Whole Navbar Styling goes here
 
 class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand" href="/">
-            <img
-              src="/docs/4.3/assets/brand/bootstrap-solid.svg"
-              width="30"
-              height="30"
-              alt=""
-            />
-          </a>
-          <a className="nav-item nav-link active" href="/">
-            Events <span className="sr-only">(current)</span>
-          </a>
-          <a className="nav-item nav-link" href="/">
-            Features
-          </a>
-          <a className="nav-item nav-link" href="/">
-            Pricing
-          </a>
-          <a className="nav-item nav-link" href="/" tabindex="-1">
-            Disabled
-          </a>
+        {/* <nav className="navbar navbar-light navbarstyle">
+          <div>
+            <a className="navbar-brand" href="/">
+              <img
+                src="/docs/4.3/assets/brand/bootstrap-solid.svg"
+                width="30"
+                height="30"
+                alt=""
+              />
+            </a>
+            <a className="nav-item nav-link " href="/">
+              Events <span className="sr-only">(current)</span>
+            </a>
+            <a className="nav-item nav-link" href="/">
+              Features
+            </a>
+            <a className="nav-item nav-link" href="/">
+              Pricing
+            </a>
+            <a className="nav-item nav-link" href="/" tabindex="-1">
+              Disabled
+            </a>
+          </div>
+        </nav> */}
+        <nav
+          className="navbar navbar-dark navbar-expand-lg fixed-top navbarstyle"
+          id="mainNav"
+        >
+          <div className="container">
+            <a className="navbar-brand brand-properties" href="#page-top">
+              Universe Tracker
+            </a>
+            <button
+              className="navbar-toggler navbar-toggler-right"
+              data-toggle="collapse"
+              data-target="#navbarResponsive"
+              type="button"
+              data-toogle="collapse"
+              aria-controls="navbarResponsive"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i className="fa fa-bars" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarResponsive">
+              <ul className="nav navbar-nav ml-auto text-uppercase">
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link js-scroll-trigger" href="/">
+                    Facts
+                  </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link js-scroll-trigger" href="/">
+                    Additional Info
+                  </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link js-scroll-trigger" href="/">
+                    About
+                  </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link js-scroll-trigger" href="/">
+                    Thank You
+                  </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link js-scroll-trigger" href="/">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     );
