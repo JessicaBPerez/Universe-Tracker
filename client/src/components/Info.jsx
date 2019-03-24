@@ -51,71 +51,70 @@ class Info extends Component {
     });
   };
 
-  //   componentDidMount() {
-  //     console.log("infoId: ", this.props.match.params.infoId);
-  //     console.log("Hey, you're getting each event!");
-  //     this.getIndividualEvent();
-  //   }
+  // editAnEvent = () => {
+  //   axios.put(``)
+  // }
 
-  //   getIndividualEvent = () => {
-  //     axios
-  //       .get(
-  //         `/api/events/${this.props.match.params.id}/info/${
-  //           this.props.match.params.infoId
-  //         }`
-  //       )
-  //       .then(response => {
-  //         console.log(response.data);
+  // componentDidMount() {
+  //   console.log("infoId: ", this.props.match.params.infoId);
+  //   console.log("Hey, you're getting each event!");
+  //   this.getIndividualEvent();
+  // }
 
-  //         this.setState({
-  //           info: response.data
-  //         });
-  //       })
-  //       .catch(err => {
-  //         console.log("Go back, goof!", err);
+  // getIndividualEvent = () => {
+  //   axios
+  //     .get(
+  //       `/api/events/${this.props.match.params.id}/info/${
+  //         this.props.match.params.infoId
+  //       }`
+  //     )
+  //     .then(response => {
+  //       console.log(response.data);
+
+  //       this.setState({
+  //         info: response.data
   //       });
-  //   };
+  //     })
+  //     .catch(err => {
+  //       console.log("Go back, goof!", err);
+  //     });
+  // };
+
   render() {
     if (this.state.redirectToHome) {
       return <Redirect to="/" />;
     }
     return (
       <div>
-        <h1>This is where your individual info will go.</h1>
-        <h2>This is where you info will go. Look below for reference.</h2>
+        <div>
+          <h1>This is where your individual info will go.</h1>
+          <h1>This is where your individual info will go.</h1>
+          <h1>This is where your individual info will go.</h1>
+        </div>
+        <h1>This is where you info will go. Look below for reference.</h1>
         {/* {this.state.info.eventDescription}
         {info} */}
         <button onClick={this.deleteAnEvent}>Delete</button>
-
-        <section
-          className=" card-margin card-style"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            flexDirection: "row"
-          }}
-        >
-          <div className="card" style={{ width: "30rem" }}>
-            <img
-              className="card-img-top"
-              src={this.state.event.eventImg}
-              alt={this.state.event.eventName}
-            />
-            <div className="card-body">
-              <p>Category Threat: {this.state.event.eventCategoryThreat}</p>
-              <p>Event Location: {this.state.event.eventLocation}</p>
-              <p>Event Description: {this.state.event.eventDescription}</p>
-              <button
-                onClick={() => this.deleteAnEvent}
-                type="button"
-                class="close"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+        {/* <div>{this.state.info.additionalInfo}</div> */}
+        <div style={{ width: "90rem" }}>
+          <div className="row align-items-center product-info">
+            <div className="col-md-6">
+              <img
+                className="img-thumbnail figure-img img-fluid rounded"
+                src={this.state.info.eventImg}
+              />
+            </div>
+            <div className="col-md-6 category-design">
+              <h3>{this.state.info.eventName}</h3>
+              <div className="getting-started-info">
+                <p>{this.state.info.eventDescription}</p>
+              </div>
+              <a className="btn btn-primary main" href="/">
+                Add More Flair
+              </a>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     );
   }

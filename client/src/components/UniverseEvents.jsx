@@ -96,22 +96,22 @@ class UniverseEvents extends Component {
       });
   };
 
-  //Deletes an event
-  deleteAnEvent = async event => {
-    try {
-      await axios.delete(`/api/events/${event._id}`); // Ask the server to delete this event
+  // Deletes an event
+  // deleteAnEvent = async event => {
+  //   try {
+  //     await axios.delete(`/api/events/${event._id}`); // Ask the server to delete this event
 
-      const indexToDelete = this.state.ideas.indexOf(event); // Determine where in our events array it lived
-      const newEvents = [...this.state.events]; // copy the old ideas list into a new one
-      newEvents.splice(indexToDelete, 1); // remove the event we deleted from this new array
+  //     const indexToDelete = this.state.ideas.indexOf(event); // Determine where in our events array it lived
+  //     const newEvents = [...this.state.events]; // copy the old ideas list into a new one
+  //     newEvents.splice(indexToDelete, 1); // remove the event we deleted from this new array
 
-      // update the state with our new events list, so the deleted
-      // event will no longer show up on the screen
-      this.setState({ events: newEvents });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     // update the state with our new events list, so the deleted
+  //     // event will no longer show up on the screen
+  //     this.setState({ events: newEvents });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   //   createAnEvent = event => {
   //     event.preventDefault();
@@ -142,6 +142,12 @@ class UniverseEvents extends Component {
     this.setState({ newEvents: cloneNewEvent });
   };
 
+  //Use this to test out Delete on the home page
+  deleteAnEvent = () => {
+    axios.delete(`/api/events/${this.state._id}`).then(response => {
+      this.setState({ redirectToHome: true });
+    });
+  };
   render() {
     const events = this.state.events.map((event, index) => {
       //   let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
@@ -199,7 +205,12 @@ class UniverseEvents extends Component {
 
         <h1>This is where your Universe Events will go.</h1>
         <h3>New Event Below</h3>
-        <button onClick={this.displayUniverseEventForm}>Add New Event</button>
+        <button
+          className="btn btn-primary "
+          onClick={this.displayUniverseEventForm}
+        >
+          Add New Event
+        </button>
         <div>
           <strong>Create a New Universe Event</strong>
           {this.state.isUniverseEventFormDisplayed ? (
@@ -257,6 +268,80 @@ class UniverseEvents extends Component {
               <button>CreateIt!</button>
             </form>
           ) : null}
+        </div>
+        <div>
+          <section className="clean-block clean-form dark">
+            <div className="container">
+              {this.state.isUniverseEventFormDisplayed ? (
+                <form onSubmit={this.createAnEvent}>
+                  <div className="form-group">
+                    <label htmlFor="eventImg">Event Image</label>
+                    <input
+                      className="form-control"
+                      id="eventImg"
+                      type="text"
+                      name="eventImg"
+                      onChange={this.handleFormChange}
+                      value={this.state.newEvents.eventImg}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventName">Event Name</label>
+                    <input
+                      className="form-control"
+                      id="eventName"
+                      type="text"
+                      name="eventName"
+                      onChange={this.handleFormChange}
+                      value={this.state.newEvents.eventName}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventDescription">Event Description</label>
+                    <textarea
+                      className="form-control"
+                      id="eventDescription"
+                      type="text"
+                      name="eventDescription"
+                      onChange={this.handleFormChange}
+                      value={this.state.newEvents.eventDescription}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventCategoryThreat">Event Threat</label>
+                    <input
+                      className="form-control"
+                      id="eventCategoryThreat"
+                      type="text"
+                      name="eventCategoryThreat"
+                      onChange={this.handleFormChange}
+                      value={this.state.newEvents.eventCategoryThreat}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventLocation">Event Location</label>
+                    <input
+                      className="form-control"
+                      id="eventLocation"
+                      type="text"
+                      name="eventLocation"
+                      onChange={this.handleFormChange}
+                      value={this.state.newEvents.eventLocation}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <button
+                      className="btn btn-primary btn-block"
+                      type="submit"
+                      value="submit"
+                    >
+                      Edit Your Event
+                    </button>
+                  </div>
+                </form>
+              ) : null}
+            </div>
+          </section>
         </div>
       </div>
     );

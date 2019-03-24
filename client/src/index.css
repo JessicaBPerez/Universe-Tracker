@@ -72,6 +72,9 @@ code {
     }
 }
 
+
+/* End Here */
+
 .card-style {
     display: flex;
     flex-wrap: wrap;
@@ -87,14 +90,203 @@ code {
     }
 }
 
-@import url('https://fonts.googleapis.com/css?family=Corben:700');
-h1 {
-    font-family: 'Corben', cursive;
-    font-size: 6rem;
-    color: white;
-    letter-spacing: 0.1rem;
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+img {
+    border-style: solid;
 }
 
 
-/* Glitch */
+/*Card Body Info*/
+
+.clean-card .info {
+    padding: 30px;
+}
+
+
+/*Card Category Title*/
+
+.clean-card h4 {
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.h4,
+h4 {
+    font-size: 1.5rem;
+}
+
+
+/*Clean Card Paragraph*/
+
+.clean-card p {
+    opacity: .8;
+    font-size: .85em;
+    margin-bottom: .9em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/*The "design it"*/
+
+.design {
+    color: pink;
+}
+
+
+/*Will fill the card text paragraph*/
+
+.card-text {
+    text-align: left;
+    letter-spacing: .1rem;
+}
+
+
+/*Form for New Page CSS*/
+
+.clean-block.clean-form form {
+    border-top: 2px solid #5ea4f3;
+    background-color: #fff;
+    max-width: 500px;
+    margin: auto;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .075);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .form-control {
+        transition: none;
+    }
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+/*Subject field*/
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.form-control:focus {
+    color: #495057;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .form-control {
+        transition: none;
+    }
+}
+
+.btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+
+/*Pointer Cursor On Scroll*/
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+
+/*Class for button*/
+
+.product-info {
+    background-color: rgb(240, 240, 240);
+}
+
+
+/* Description and Specification Page*/
+
+
+/*Design Pages*/
+
+.category-design h3 {
+    font-family: "playfair display sc";
+}
+
+.card-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flair-name {
+    font-family: "playfair display sc";
+    color: pink;
+}
+
+.bespoke-logo {
+    margin-left: 4rem;
+}

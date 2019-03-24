@@ -22,7 +22,7 @@ router.delete('/:id', universeEventController.delete)
 //old one
 
 // router.get('/:id/info/:infoId', infoController.show)
-router.get('/:id', infoController.show)
+router.get('/:id/info/:infoId', infoController.show)
 
 router.post('/:id/info/:infoId', infoController.create)
 
