@@ -12,14 +12,15 @@ class Info extends Component {
       info: {},
       event: {},
       additionalInfo: {
-        infoImg: "",
-        randomFacts: "",
-        nextMajorEvent: "",
+        eventImg: "",
+        eventName: "",
+        eventCategoryThreat: "",
+        eventLocation: "",
         eventDescription: "",
-        threatLevel: "",
+        additionalInfo: [],
         info: []
       },
-      isAddMoreInfoFormDisplayed: false,
+      isEventEditFormDisplayed: false,
       redirectToHome: false
     };
   }
@@ -88,30 +89,48 @@ class Info extends Component {
       <div>
         <div>
           <h1>This is where your individual info will go.</h1>
-          <h1>This is where your individual info will go.</h1>
-          <h1>This is where your individual info will go.</h1>
         </div>
         <h1>This is where you info will go. Look below for reference.</h1>
         {/* {this.state.info.eventDescription}
         {info} */}
-        <button onClick={this.deleteAnEvent}>Delete</button>
+        {/* <button onClick={this.deleteAnEvent}>Delete</button> */}
         {/* <div>{this.state.info.additionalInfo}</div> */}
-        <div style={{ width: "90rem" }}>
+        <div className=" justify-content-center" style={{ width: "90rem" }}>
           <div className="row align-items-center product-info">
             <div className="col-md-6">
               <img
+                alt={this.state.info.eventName}
                 className="img-thumbnail figure-img img-fluid rounded"
                 src={this.state.info.eventImg}
               />
             </div>
             <div className="col-md-6 category-design">
               <h3>{this.state.info.eventName}</h3>
-              <div className="getting-started-info">
-                <p>{this.state.info.eventDescription}</p>
+              <div>
+                <p>
+                  <strong>Event Category Threat: </strong>
+                  {this.state.info.eventCategoryThreat}
+                </p>
               </div>
-              <a className="btn btn-primary main" href="/">
-                Add More Flair
-              </a>
+              <div>
+                <p>
+                  <strong>Event Location: </strong>
+                  {this.state.info.eventLocation}
+                </p>
+              </div>
+              <div className="getting-started-info">
+                <p>
+                  <strong>Event Description: </strong>
+                  {this.state.info.eventDescription}
+                </p>
+              </div>
+
+              <button
+                onClick={this.deleteAnEvent}
+                className="btn btn-primary main"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>

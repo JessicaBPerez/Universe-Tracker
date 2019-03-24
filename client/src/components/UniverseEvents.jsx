@@ -171,12 +171,21 @@ class UniverseEvents extends Component {
                   alt={event.eventName}
                 />
                 <div className="card-body">
-                  <p className="card-text">
+                  <p className="link-name">
                     <Link to={pathname}>{event.eventName}</Link>
                   </p>
-                  <p>Category Threat: {event.eventCategoryThreat}</p>
-                  <p>Event Location: {event.eventLocation}</p>
-                  <p>Event Description: {event.eventDescription}</p>
+                  <p>
+                    <strong>Category Threat: </strong>
+                    {event.eventCategoryThreat}
+                  </p>
+                  <p>
+                    <strong>Event Location: </strong>
+                    {event.eventLocation}
+                  </p>
+                  <p>
+                    <strong>Event Description: </strong>
+                    {event.eventDescription}
+                  </p>
                   <button
                     onClick={() => this.state.deleteAnEvent}
                     type="button"
@@ -203,8 +212,8 @@ class UniverseEvents extends Component {
         })} */}
         {events}
 
-        <h1>This is where your Universe Events will go.</h1>
-        <h3>New Event Below</h3>
+        <h1>Want to add a new Universe Event? You can! Click Below</h1>
+
         <button
           className="btn btn-primary "
           onClick={this.displayUniverseEventForm}
@@ -212,7 +221,6 @@ class UniverseEvents extends Component {
           Add New Event
         </button>
         <div>
-          <strong>Create a New Universe Event</strong>
           {this.state.isUniverseEventFormDisplayed ? (
             <form onSubmit={this.createAnEvent}>
               <div>
