@@ -5,12 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
-import styled, { keyframes } from "styled-components";
 
-const slide = keyframes`
-  from { background-position: 0 0; }
-    to { background-position: -400px 0; }
-`;
+// import UniverseEventsIndividual from "./components/UniverseEventsIndividual";
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +43,11 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={UniverseEvents} />
               {/* <Route exact path="/events/:id/info/:infoId" component={Info} /> */}
+              {/* <Route
+                exact
+                path="/events/:id"
+                component={UniverseEventsIndividual} */}
+              />
               <Route path="/events/:id" component={Info} />
             </Switch>
           </Router>

@@ -40,7 +40,7 @@ code {
 }
 
 .card-margin {
-    margin-top: 8rem;
+    margin-top: 3rem;
 }
 
 .navbar-dark .navbar-toggler {
@@ -95,3 +95,6 @@ h1 {
     letter-spacing: 0.1rem;
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
 }
+
+
+/* Glitch */

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 class Info extends Component {
@@ -9,6 +10,7 @@ class Info extends Component {
       singleEvent: this.props.match.params.id,
 
       info: {},
+      event: {},
       additionalInfo: {
         infoImg: "",
         randomFacts: "",
@@ -17,7 +19,8 @@ class Info extends Component {
         threatLevel: "",
         info: []
       },
-      isAddMoreInfoFormDisplayed: false
+      isAddMoreInfoFormDisplayed: false,
+      redirectToHome: false
     };
   }
 
@@ -39,6 +42,13 @@ class Info extends Component {
       .catch(err => {
         console.log("Go back, you goffy goober!", err);
       });
+  };
+
+  //Deletes and event
+  deleteAnEvent = () => {
+    axios.delete(`/api/events/${this.props.match.params.id}`).then(response => {
+      this.setState({ redirectToHome: true });
+    });
   };
 
   //   componentDidMount() {
@@ -66,11 +76,46 @@ class Info extends Component {
   //       });
   //   };
   render() {
+    if (this.state.redirectToHome) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
         <h1>This is where your individual info will go.</h1>
         <h2>This is where you info will go. Look below for reference.</h2>
-        <div className="text-white">{this.state.info.eventDescription}</div>
+        {/* {this.state.info.eventDescription}
+        {info} */}
+        <button onClick={this.deleteAnEvent}>Delete</button>
+
+        <section
+          className=" card-margin card-style"
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            flexDirection: "row"
+          }}
+        >
+          <div className="card" style={{ width: "30rem" }}>
+            <img
+              className="card-img-top"
+              src={this.state.event.eventImg}
+              alt={this.state.event.eventName}
+            />
+            <div className="card-body">
+              <p>Category Threat: {this.state.event.eventCategoryThreat}</p>
+              <p>Event Location: {this.state.event.eventLocation}</p>
+              <p>Event Description: {this.state.event.eventDescription}</p>
+              <button
+                onClick={() => this.deleteAnEvent}
+                type="button"
+                class="close"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

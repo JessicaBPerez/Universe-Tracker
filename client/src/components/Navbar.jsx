@@ -7,30 +7,6 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        {/* <nav className="navbar navbar-light navbarstyle">
-          <div>
-            <a className="navbar-brand" href="/">
-              <img
-                src="/docs/4.3/assets/brand/bootstrap-solid.svg"
-                width="30"
-                height="30"
-                alt=""
-              />
-            </a>
-            <a className="nav-item nav-link " href="/">
-              Events <span className="sr-only">(current)</span>
-            </a>
-            <a className="nav-item nav-link" href="/">
-              Features
-            </a>
-            <a className="nav-item nav-link" href="/">
-              Pricing
-            </a>
-            <a className="nav-item nav-link" href="/" tabindex="-1">
-              Disabled
-            </a>
-          </div>
-        </nav> */}
         <nav
           className="navbar navbar-dark navbar-expand-lg fixed-top navbarstyle"
           id="mainNav"
@@ -58,23 +34,23 @@ class Navbar extends Component {
                     Facts
                   </a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link js-scroll-trigger" href="/">
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link js-scroll-trigger" href="/">
                     Additional Info
                   </a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link js-scroll-trigger" href="/">
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link js-scroll-trigger" href="/">
                     About
                   </a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link js-scroll-trigger" href="/">
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link js-scroll-trigger" href="/">
                     Thank You
                   </a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link js-scroll-trigger" href="/">
+                <li className="nav-item" role="presentation">
+                  <a className="nav-link js-scroll-trigger" href="/">
                     Contact
                   </a>
                 </li>

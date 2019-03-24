@@ -14,7 +14,8 @@ class UniverseEvents extends Component {
       eventDescription: "",
       additionalInfo: []
     },
-    isUniverseEventFormDisplayed: false
+    isUniverseEventFormDisplayed: false,
+    createdEvent: {}
   };
 
   //Use the componentDidMount lifecycle method
@@ -89,9 +90,27 @@ class UniverseEvents extends Component {
             additionalInfo: []
           },
           isUniverseEventFormDisplayed: false,
-          events: eventList
+          events: eventList,
+          redirecToHome: false
         });
       });
+  };
+
+  //Deletes an event
+  deleteAnEvent = async event => {
+    try {
+      await axios.delete(`/api/events/${event._id}`); // Ask the server to delete this event
+
+      const indexToDelete = this.state.ideas.indexOf(event); // Determine where in our events array it lived
+      const newEvents = [...this.state.events]; // copy the old ideas list into a new one
+      newEvents.splice(indexToDelete, 1); // remove the event we deleted from this new array
+
+      // update the state with our new events list, so the deleted
+      // event will no longer show up on the screen
+      this.setState({ events: newEvents });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   //   createAnEvent = event => {
@@ -152,7 +171,12 @@ class UniverseEvents extends Component {
                   <p>Category Threat: {event.eventCategoryThreat}</p>
                   <p>Event Location: {event.eventLocation}</p>
                   <p>Event Description: {event.eventDescription}</p>
-                  <button type="button" class="close" aria-label="Close">
+                  <button
+                    onClick={() => this.state.deleteAnEvent}
+                    type="button"
+                    class="close"
+                    aria-label="Close"
+                  >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -164,6 +188,13 @@ class UniverseEvents extends Component {
     });
     return (
       <div>
+        {/* {this.state.events.map(event => {
+          return (
+            <div key={event._id}>
+              <Link to={`/${event._id}`}>{event.eventName}</Link>
+            </div>
+          );
+        })} */}
         {events}
 
         <h1>This is where your Universe Events will go.</h1>
