@@ -11,7 +11,7 @@ class Info extends Component {
 
       info: {},
       event: {},
-      additionalInfo: {
+      editInfo: {
         eventImg: "",
         eventName: "",
         eventCategoryThreat: "",
@@ -21,7 +21,8 @@ class Info extends Component {
         info: []
       },
       isEventEditFormDisplayed: false,
-      redirectToHome: false
+      redirectToHome: false,
+      editEvent: {}
     };
   }
 
@@ -59,6 +60,14 @@ class Info extends Component {
         isEventEditFormDisplayed: !state.isEventEditFormDisplayed
       };
     });
+  };
+
+  //Handles form change event value
+  handleFormChange = event => {
+    //Preserves Event State
+    const editNewEvent = { ...this.state.editEvent };
+    editNewEvent[event.target.name] = event.target.value;
+    this.setState({ editEvent: editNewEvent });
   };
 
   // editAnEvent = () => {
@@ -153,6 +162,8 @@ class Info extends Component {
           </div>
         </div>
         <div>
+          <br />
+          <br />
           <section className="clean-block clean-form dark">
             <div className="container">
               {this.state.isEventEditFormDisplayed ? (

@@ -6,7 +6,9 @@ import axios from "axios";
 import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
 import StarTracker from "./components/StarTracker.jsx";
+import Weather from "./components/Weather";
 
+console.log(process.env.REACT_APP_WEATHER_API_KEY);
 // import UniverseEventsIndividual from "./components/UniverseEventsIndividual";
 
 class App extends Component {
@@ -51,6 +53,7 @@ class App extends Component {
               />
               <Route path="/events/:id" component={Info} />
               <Route exact path="/tracker" component={StarTracker} />
+              <Route exact path="/weather" component={Weather} />
             </Switch>
           </Router>
         </div>
