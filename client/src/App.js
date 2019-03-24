@@ -7,8 +7,9 @@ import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
 import StarTracker from "./components/StarTracker.jsx";
 import Weather from "./components/Weather";
+// const WEATHER_API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`;
+// console.log("API key", WEATHER_API_KEY);
 
-console.log(process.env.REACT_APP_WEATHER_API_KEY);
 // import UniverseEventsIndividual from "./components/UniverseEventsIndividual";
 
 class App extends Component {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Weather extends Component {
   state = {
@@ -28,6 +29,9 @@ class Weather extends Component {
   render() {
     return (
       <div>
+        {/* {this.state.weather.map(weather => {
+          return <div>City: {weather.weather.city}</div>;
+        })} */}
         <h1> Where weather page will go.</h1>
       </div>
     );

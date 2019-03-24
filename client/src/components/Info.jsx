@@ -176,7 +176,7 @@ class Info extends Component {
                       type="text"
                       name="eventImg"
                       onChange={this.handleFormChange}
-                      // value={this.state.newEvents.eventImg}
+                      value={this.state.eventImg || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -187,7 +187,7 @@ class Info extends Component {
                       type="text"
                       name="eventName"
                       onChange={this.handleFormChange}
-                      // value={this.state.newEvents.eventName}
+                      value={this.state.eventName || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -198,7 +198,7 @@ class Info extends Component {
                       type="text"
                       name="eventDescription"
                       onChange={this.handleFormChange}
-                      // value={this.state.newEvents.eventDescription}
+                      value={this.state.eventDescription || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -209,7 +209,7 @@ class Info extends Component {
                       type="text"
                       name="eventCategoryThreat"
                       onChange={this.handleFormChange}
-                      // value={this.state.newEvents.eventCategoryThreat}
+                      value={this.state.eventCategoryThreat || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -220,7 +220,7 @@ class Info extends Component {
                       type="text"
                       name="eventLocation"
                       onChange={this.handleFormChange}
-                      // value={this.state.newEvents.eventLocation}
+                      value={this.state.eventLocation || ""}
                     />
                   </div>
                   <div className="form-group">

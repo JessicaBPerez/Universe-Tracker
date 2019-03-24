@@ -138,7 +138,7 @@ class UniverseEvents extends Component {
   //Handles form change event value
   handleFormChange = event => {
     //Preserves Event State
-    const cloneNewEvent = { ...this.state.newEvent };
+    const cloneNewEvent = { ...this.state.newEvents };
     cloneNewEvent[event.target.name] = event.target.value;
     this.setState({ newEvents: cloneNewEvent });
   };
