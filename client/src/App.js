@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
+import StarTracker from "./components/StarTracker.jsx";
 
 // import UniverseEventsIndividual from "./components/UniverseEventsIndividual";
 
@@ -25,7 +26,7 @@ class App extends Component {
     };
   }
 
-  //Information that allows for rendering on respective page
+  //Information that allows for Universe Event rendering on respective page
   componentDidMount() {
     axios.get(`/api/events`).then(response => {
       this.setState({
@@ -49,6 +50,7 @@ class App extends Component {
                 component={UniverseEventsIndividual} */}
               />
               <Route path="/events/:id" component={Info} />
+              <Route exact path="/tracker" component={StarTracker} />
             </Switch>
           </Router>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import Info from "./Info.jsx";
 
@@ -15,7 +15,8 @@ class UniverseEvents extends Component {
       additionalInfo: []
     },
     isUniverseEventFormDisplayed: false,
-    createdEvent: {}
+    createdEvent: {},
+    redirectToHome: false
   };
 
   //Use the componentDidMount lifecycle method
@@ -91,7 +92,7 @@ class UniverseEvents extends Component {
           },
           isUniverseEventFormDisplayed: false,
           events: eventList,
-          redirecToHome: false
+          redirecToHome: true
         });
       });
   };
@@ -149,6 +150,9 @@ class UniverseEvents extends Component {
     });
   };
   render() {
+    if (this.state.redirectToHome) {
+      return <Redirect to="/" />;
+    }
     const events = this.state.events.map((event, index) => {
       //   let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
       let pathname = `/events/${event._id}`;
@@ -218,7 +222,7 @@ class UniverseEvents extends Component {
           className="btn btn-primary "
           onClick={this.displayUniverseEventForm}
         >
-          Add New Event
+          Display Add Event Form
         </button>
         <div>
           {this.state.isUniverseEventFormDisplayed ? (
@@ -343,7 +347,7 @@ class UniverseEvents extends Component {
                       type="submit"
                       value="submit"
                     >
-                      Edit Your Event
+                      Add New Event
                     </button>
                   </div>
                 </form>

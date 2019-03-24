@@ -290,3 +290,7 @@ button:focus {
     font-family: "Orbitron";
     font-size: 1.5rem;
 }
+
+.button-margin {
+    margin-left: 2rem;
+}

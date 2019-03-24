@@ -52,6 +52,15 @@ class Info extends Component {
     });
   };
 
+  //Toggles event Edit Form
+  displayEventEditForm = () => {
+    this.setState((state, props) => {
+      return {
+        isEventEditFormDisplayed: !state.isEventEditFormDisplayed
+      };
+    });
+  };
+
   // editAnEvent = () => {
   //   axios.put(``)
   // }
@@ -95,8 +104,11 @@ class Info extends Component {
         {info} */}
         {/* <button onClick={this.deleteAnEvent}>Delete</button> */}
         {/* <div>{this.state.info.additionalInfo}</div> */}
-        <div className=" justify-content-center" style={{ width: "90rem" }}>
-          <div className="row align-items-center product-info">
+        <div
+          className=" justify-content-center container"
+          style={{ width: "90rem" }}
+        >
+          <div className="row align-items-center product-info card-style">
             <div className="col-md-6">
               <img
                 alt={this.state.info.eventName}
@@ -127,12 +139,92 @@ class Info extends Component {
 
               <button
                 onClick={this.deleteAnEvent}
-                className="btn btn-primary main"
+                className="btn btn-outline-danger main"
               >
                 Delete
               </button>
+              <button
+                onClick={this.displayEventEditForm}
+                className="btn btn-outline-info button-margin"
+              >
+                Edit
+              </button>
             </div>
           </div>
+        </div>
+        <div>
+          <section className="clean-block clean-form dark">
+            <div className="container">
+              {this.state.isEventEditFormDisplayed ? (
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="eventImg">Event Image</label>
+                    <input
+                      className="form-control"
+                      id="eventImg"
+                      type="text"
+                      name="eventImg"
+                      onChange={this.handleFormChange}
+                      // value={this.state.newEvents.eventImg}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventName">Event Name</label>
+                    <input
+                      className="form-control"
+                      id="eventName"
+                      type="text"
+                      name="eventName"
+                      onChange={this.handleFormChange}
+                      // value={this.state.newEvents.eventName}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventDescription">Event Description</label>
+                    <textarea
+                      className="form-control"
+                      id="eventDescription"
+                      type="text"
+                      name="eventDescription"
+                      onChange={this.handleFormChange}
+                      // value={this.state.newEvents.eventDescription}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventCategoryThreat">Event Threat</label>
+                    <input
+                      className="form-control"
+                      id="eventCategoryThreat"
+                      type="text"
+                      name="eventCategoryThreat"
+                      onChange={this.handleFormChange}
+                      // value={this.state.newEvents.eventCategoryThreat}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventLocation">Event Location</label>
+                    <input
+                      className="form-control"
+                      id="eventLocation"
+                      type="text"
+                      name="eventLocation"
+                      onChange={this.handleFormChange}
+                      // value={this.state.newEvents.eventLocation}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <button
+                      className="btn btn-primary btn-block"
+                      type="submit"
+                      value="submit"
+                    >
+                      Edit Event
+                    </button>
+                  </div>
+                </form>
+              ) : null}
+            </div>
+          </section>
         </div>
       </div>
     );
