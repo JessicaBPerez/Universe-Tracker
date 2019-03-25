@@ -1,6 +1,14 @@
 const { UniverseEvent, Info, Comment } = require('../models/Universe.js')
 
 const infoController = {
+    index: (req, res) => {
+        UniverseEvent.findById(req.params.id).then((event) => {
+            event.additionalInfo
+            res.json(event.additionalInfo)
+        }).catch((err) => {
+            console.log("Go back!")
+        })
+    },
     show: (req, res) => {
         console.log('HEY LOOK HERE THIS IS WHERE STUFF IS')
         const entireUrl = '/' + req.params.id + '/info/' + req.params.infoId
@@ -14,7 +22,7 @@ const infoController = {
     },
     create: (req, res) => {
         Info.findById(req.params.infoId).then(info => {
-            const newInfo = Comment.create(req.body)
+            const newInfo = Info.create(req.body)
                 .then((newInfo) => {
                     info.info.push(newInfo)
                     console.log(newInfo)

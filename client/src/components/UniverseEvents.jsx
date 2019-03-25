@@ -15,7 +15,6 @@ class UniverseEvents extends Component {
       additionalInfo: []
     },
     isUniverseEventFormDisplayed: false,
-    createdEvent: {},
     redirectToHome: false
   };
 

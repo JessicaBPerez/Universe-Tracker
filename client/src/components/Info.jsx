@@ -162,8 +162,10 @@ class Info extends Component {
                 </a>
               </h3>
               {/* <Link to={pathname}>Additional Information</Link> */}
-              <Link />
-              <a href="/">Link to</a>
+              <Link to={`${this.state.info._id}/info`}>Additional Info</Link>
+              {/* <a href="/">
+                Additional Information
+              </a> */}
               <div>
                 <p>
                   <strong>Event Category Threat: </strong>
