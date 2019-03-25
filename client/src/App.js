@@ -7,6 +7,7 @@ import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
 import StarTracker from "./components/StarTracker.jsx";
 import Weather from "./components/Weather";
+import AdditionalInfo from "./components/AdditionalInfo.jsx";
 // const WEATHER_API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`;
 // console.log("API key", WEATHER_API_KEY);
 
@@ -52,7 +53,12 @@ class App extends Component {
                 path="/events/:id"
                 component={UniverseEventsIndividual} */}
               />
-              <Route path="/events/:id" component={Info} />
+              <Route exact path="/events/:id" component={Info} />
+              <Route
+                exact
+                path="/events/:id/info/:infoId"
+                component={AdditionalInfo}
+              />
               <Route exact path="/tracker" component={StarTracker} />
               <Route exact path="/weather" component={Weather} />
             </Switch>

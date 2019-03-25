@@ -31,7 +31,7 @@ const universeEventController = {
         //     console.log(err)
         //     res.status(500).json(err)
         // }
-        UniverseEvent.findByIdAndUpdate(req.params.id, req.body).then(event => {
+        UniverseEvent.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(event => {
             res.json(event)
         })
     },

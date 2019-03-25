@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Info extends Component {
   constructor(props) {
@@ -29,13 +30,20 @@ class Info extends Component {
       },
       isEventEditFormDisplayed: false,
       redirectToHome: false,
-      editEvent: {}
+      editEvent: {},
+      updateConfirmationDisplay: false
     };
   }
 
   componentDidMount = () => {
     console.log("HEY!!!");
     this.getSingleEvent();
+  };
+
+  toggleUpdateConfirmationMessage = () => {
+    this.setState({
+      updateConfirmationDisplay: !this.state.updateConfirmationDisplay
+    });
   };
 
   getSingleEvent = () => {
@@ -80,7 +88,7 @@ class Info extends Component {
   updateInfo = event => {
     event.preventDefault();
     axios
-      .put(`/api/events/${this.props.match.params._id}`, {
+      .put(`/api/events/${this.props.match.params.id}`, {
         eventImg: this.state.info.eventImg,
         eventName: this.state.info.eventName,
         eventCategoryThreat: this.state.info.eventCategoryThreat,
@@ -88,7 +96,9 @@ class Info extends Component {
         eventDescription: this.state.info.eventDescription
       })
       .then(response => {
-        this.setState({ info: response.data, isEventEditFormDisplayed: false });
+        this.displayEventEditForm();
+        this.toggleUpdateConfirmationMessage();
+        // this.setState({ info: response.data, isEventEditFormDisplayed: false });
       });
   };
 
@@ -121,6 +131,8 @@ class Info extends Component {
     if (this.state.redirectToHome) {
       return <Redirect to="/" />;
     }
+
+    // let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
     return (
       <div>
         <div>
@@ -144,7 +156,12 @@ class Info extends Component {
               />
             </div>
             <div className="col-md-6 category-design">
-              <h3>{this.state.info.eventName}</h3>
+              <h3>
+                <a href="https://en.wikipedia.org/wiki/Abiogenesis">
+                  {this.state.info.eventName}
+                </a>
+              </h3>
+              {/* <Link to={pathname}>Additional Information</Link> */}
               <div>
                 <p>
                   <strong>Event Category Threat: </strong>
@@ -251,6 +268,11 @@ class Info extends Component {
                     </button>
                   </div>
                 </form>
+              ) : null}
+              {this.state.updateConfirmationDisplay ? (
+                <div>
+                  <h1>Event has been updated.</h1>
+                </div>
               ) : null}
             </div>
           </section>
