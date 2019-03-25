@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 class Weather extends Component {
   state = {
@@ -12,9 +13,10 @@ class Weather extends Component {
   };
 
   getWeatherData = () => {
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast?zip=30303,us&appid=92b35835bd441f64629db7ab72836041`
+        `https://api.openweathermap.org/data/2.5/forecast?zip=30303,us&appid=${WEATHER_API_KEY}`
       )
       .then(response => {
         this.setState({

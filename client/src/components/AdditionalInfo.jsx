@@ -40,20 +40,14 @@ class AdditionalInfo extends Component {
       });
   };
   render() {
-    // const additionalFacts = this.state.additionalFacts.map((fact, index) => {
-    //   //   let pathname = `/events/${event._id}/info
-    //   return (
-    //     <div>
-    //       <h1>{fact.threatLevel}</h1>
-    //     </div>
-    //   );
-    // });
-
     return (
       <div>
-        <h1>{this.state.additionalFacts.threatLevel}</h1>
-        <img src={this.state.additionalFacts.infoImg} alt="" />
         <h1>Additional Info!</h1>
+        <img src={this.state.additionalFacts.infoImg} alt="Big Bang" />
+        <h1>{this.state.additionalFacts.randomFacts}</h1>
+        <h1>{this.state.additionalFacts.nextMajorEvent}</h1>
+        <h1>{this.state.additionalFacts.eventDescription}</h1>
+        <h1>{this.state.additionalFacts.threatLevel}</h1>
       </div>
     );
   }

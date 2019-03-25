@@ -6,7 +6,7 @@ const { UniverseEvent } = require('../models/Universe.js')
 const { Info } = require('../models/Universe.js')
 
 const bigBangInfo = new Info({
-    infoImg: "https://i.kinja-img.com/gawker-media/image/upload/t_original/ah4plvlhlrcd16pxjvbz.jpg",
+    infoImg: "https://r.hswstatic.com/w_907/gif/big-bang-sound-1jpg.jpg",
     randomFacts: "Big Bang random fact here.",
     nextMajorEvent: "17 quintillion years",
     eventDescription: "Universe dies.",

@@ -102,11 +102,11 @@ class Info extends Component {
       });
   };
 
-  // componentDidMount() {
-  //   console.log("infoId: ", this.props.match.params.infoId);
-  //   console.log("Hey, you're getting each event!");
-  //   this.getIndividualEvent();
-  // }
+  componentDidMount() {
+    console.log("infoId: ", this.props.match.params.infoId);
+    console.log("Hey, you're getting each event!");
+    this.getIndividualEvent();
+  }
 
   // getIndividualEvent = () => {
   //   axios
@@ -162,6 +162,8 @@ class Info extends Component {
                 </a>
               </h3>
               {/* <Link to={pathname}>Additional Information</Link> */}
+              <Link />
+              <a href="/">Link to</a>
               <div>
                 <p>
                   <strong>Event Category Threat: </strong>
