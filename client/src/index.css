@@ -146,10 +146,6 @@ p {
 
 /*The "design it"*/
 
-.design {
-    color: pink;
-}
-
 
 /*Will fill the card text paragraph*/
 
@@ -263,7 +259,9 @@ button:focus {
 /*Class for button*/
 
 .product-info {
-    background-color: rgb(240, 240, 240);
+    /* background-color: rgb(240, 240, 240); */
+    border: solid white;
+    border-radius: 2%;
 }
 
 
@@ -293,4 +291,27 @@ button:focus {
 
 .button-margin {
     margin-left: 2rem;
+}
+
+.card-container {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card-img-top {
+    max-height: 300px;
+    /* box-shadow: 10px 10px #888888; */
+}
+
+.card-body {
+    color: white;
+    background: rgba(0, 0, 0);
+    /* box-shadow: 10px 10px #888888; */
+}
+
+.card-body span {
+    color: white;
 }

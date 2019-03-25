@@ -214,7 +214,7 @@ class UniverseEvents extends Component {
             </div>
           );
         })} */}
-        {events}
+        <div class="card-container">{events}</div>
 
         <h1>Want to add a new Universe Event? You can! Click Below</h1>
 

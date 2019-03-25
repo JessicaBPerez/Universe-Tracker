@@ -9,7 +9,14 @@ class Info extends Component {
       //   singleEvent: this.props.match.infoId,
       singleEvent: this.props.match.params.id,
 
-      info: {},
+      info: {
+        eventImg: "",
+        eventName: "",
+        eventCategoryThreat: "",
+        eventLocation: "",
+        eventDescription: "",
+        additionalInfo: []
+      },
       event: {},
       editInfo: {
         eventImg: "",
@@ -65,14 +72,25 @@ class Info extends Component {
   //Handles form change event value
   handleFormChange = event => {
     //Preserves Event State
-    const editNewEvent = { ...this.state.editEvent };
-    editNewEvent[event.target.name] = event.target.value;
-    this.setState({ editEvent: editNewEvent });
+    const copyInfo = { ...this.state.info };
+    copyInfo[event.target.name] = event.target.value;
+    this.setState({ info: copyInfo });
   };
 
-  // editAnEvent = () => {
-  //   axios.put(``)
-  // }
+  updateInfo = event => {
+    event.preventDefault();
+    axios
+      .put(`/api/events/${this.props.match.params._id}`, {
+        eventImg: this.state.info.eventImg,
+        eventName: this.state.info.eventName,
+        eventCategoryThreat: this.state.info.eventCategoryThreat,
+        eventLocation: this.state.info.eventLocation,
+        eventDescription: this.state.info.eventDescription
+      })
+      .then(response => {
+        this.setState({ info: response.data, isEventEditFormDisplayed: false });
+      });
+  };
 
   // componentDidMount() {
   //   console.log("infoId: ", this.props.match.params.infoId);
@@ -167,7 +185,7 @@ class Info extends Component {
           <section className="clean-block clean-form dark">
             <div className="container">
               {this.state.isEventEditFormDisplayed ? (
-                <form>
+                <form onSubmit={this.updateInfo}>
                   <div className="form-group">
                     <label htmlFor="eventImg">Event Image</label>
                     <input
@@ -176,7 +194,7 @@ class Info extends Component {
                       type="text"
                       name="eventImg"
                       onChange={this.handleFormChange}
-                      value={this.state.eventImg || ""}
+                      value={this.state.info.eventImg || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -187,7 +205,7 @@ class Info extends Component {
                       type="text"
                       name="eventName"
                       onChange={this.handleFormChange}
-                      value={this.state.eventName || ""}
+                      value={this.state.info.eventName || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -198,7 +216,7 @@ class Info extends Component {
                       type="text"
                       name="eventDescription"
                       onChange={this.handleFormChange}
-                      value={this.state.eventDescription || ""}
+                      value={this.state.info.eventDescription || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -209,7 +227,7 @@ class Info extends Component {
                       type="text"
                       name="eventCategoryThreat"
                       onChange={this.handleFormChange}
-                      value={this.state.eventCategoryThreat || ""}
+                      value={this.state.info.eventCategoryThreat || ""}
                     />
                   </div>
                   <div className="form-group">
@@ -220,12 +238,12 @@ class Info extends Component {
                       type="text"
                       name="eventLocation"
                       onChange={this.handleFormChange}
-                      value={this.state.eventLocation || ""}
+                      value={this.state.info.eventLocation || ""}
                     />
                   </div>
                   <div className="form-group">
                     <button
-                      className="btn btn-primary btn-block"
+                      className="btn btn-outline-info btn-block"
                       type="submit"
                       value="submit"
                     >
