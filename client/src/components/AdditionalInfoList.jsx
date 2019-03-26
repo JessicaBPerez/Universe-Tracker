@@ -80,6 +80,7 @@ class AdditionalInfoList extends Component {
   render() {
     const additionalInfos = this.state.additionalFacts.map(
       (additionalInfo, index) => {
+        // let pathname = `/events/${event._id}/info/${info._id}`;
         //   let pathname
         return (
           <div>
@@ -106,6 +107,13 @@ class AdditionalInfoList extends Component {
                     <strong>Random Fact: </strong>
                     {additionalInfo.randomFacts}
                   </p>
+                  <Link
+                    to={`/events/${this.props.match.params.id}/info/${
+                      additionalInfo._id
+                    }`}
+                  >
+                    Additional Info
+                  </Link>
                   <p>
                     <strong>Next Major Event: </strong>
                     {additionalInfo.nextMajorEvent}
@@ -214,6 +222,8 @@ class AdditionalInfoList extends Component {
               nextMajorEvent={fact.nextMajorEvent}
               eventDescription={fact.eventDescription}
               threatLevel={fact.threatLevel}
+              handleFormChange={this.handleFormChange}
+              createANewFact={this.createANewFact}
             />
           );
         })}
