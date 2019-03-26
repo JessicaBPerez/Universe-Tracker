@@ -12,8 +12,24 @@ class AdditionalInfoListDummy extends Component {
   }
 
   componentDidMount = () => {
-    // this.getSingleFact();
+    console.log("HEY!!!");
+    this.getSingleFact();
   };
+
+  //   getSingleFact = () => {
+  //     axios
+  //       .get(
+  //         `/api/events/${this.props.match.params.id}/info/${
+  //           this.props.match.params.infoId
+  //         }`
+  //       )
+  //       .then(response => {
+  //         console.log(response.data);
+  //         this.setState({
+  //           individualInfo: response.data
+  //         });
+  //       });
+  //   };
 
   getSingleFact = () => {
     axios
@@ -23,10 +39,13 @@ class AdditionalInfoListDummy extends Component {
         }`
       )
       .then(response => {
-        console.log(response.data);
+        console.log(response);
         this.setState({
           individualInfo: response.data
         });
+      })
+      .catch(err => {
+        console.log("You didn't get the individual Id!", err);
       });
   };
 
