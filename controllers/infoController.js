@@ -21,14 +21,17 @@ const infoController = {
         })
     },
     create: (req, res) => {
-        Info.findById(req.params.infoId).then(info => {
-            const newInfo = Info.create(req.body)
-                .then((newInfo) => {
-                    info.info.push(newInfo)
-                    console.log(newInfo)
-                    info.save()
-                    res.json(newInfo)
-                })
+        // Info.findById(req.params.infoId).then(info => {
+        //     const newInfo = Info.create(req.body)
+        //         .then((newInfo) => {
+        //             info.info.push(newInfo)
+        //             console.log(newInfo)
+        //             info.save()
+        //             res.json(newInfo)
+        //         })
+        // })
+        Info.create(req.body).then(event => {
+            res.json(event)
         })
     },
 }

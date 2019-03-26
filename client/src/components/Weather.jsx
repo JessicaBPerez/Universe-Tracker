@@ -34,7 +34,10 @@ class Weather extends Component {
         {/* {this.state.weather.map(weather => {
           return <div>City: {weather.weather.city}</div>;
         })} */}
+
         <h1> Where weather page will go.</h1>
+        <h1 className="text-white">{this.state.weather.cnt}</h1>
+        {/* <h1 className="text-white">{this.state.weather}</h1> */}
       </div>
     );
   }

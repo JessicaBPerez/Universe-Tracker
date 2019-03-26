@@ -56,7 +56,10 @@ class AdditionalInfoList extends Component {
         threatLevel: this.state.newFacts.threatLevel
       })
       .then(response => {
-        const factList = { ...this.state.additionalFacts };
+        const factList = [...this.state.additionalFacts];
+        console.log(factList);
+
+        // console.log("Array".Object.values(factList));
         factList.push(response.data);
         this.setState({
           newFacts: {
