@@ -9,6 +9,7 @@ import StarTracker from "./components/StarTracker.jsx";
 import Weather from "./components/Weather";
 import AdditionalInfo from "./components/AdditionalInfo.jsx";
 import AdditionalInfoList from "./components/AdditionalInfoList";
+import AdditionalInfoListDummy from "./components/AdditionalInfoListDummy";
 
 // import UniverseEventsIndividual from "./components/UniverseEventsIndividual";
 
@@ -58,10 +59,15 @@ class App extends Component {
                 path="/events/:id/info"
                 component={AdditionalInfoList}
               />
-              <Route
+              {/* <Route
                 exact
                 path="/events/:id/info/:infoId"
                 component={AdditionalInfo}
+              /> */}
+              <Route
+                exact
+                path="/events/:id/info/:infoId"
+                component={AdditionalInfoListDummy}
               />
               <Route exact path="/tracker" component={StarTracker} />
               <Route exact path="/weather" component={Weather} />
