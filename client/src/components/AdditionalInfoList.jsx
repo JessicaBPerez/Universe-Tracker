@@ -28,6 +28,7 @@ class AdditionalInfoList extends Component {
     axios
       .get(`/api/events/${this.props.match.params.id}/info`)
       .then(response => {
+        console.log(response.data);
         this.setState({
           additionalFacts: response.data
         });
@@ -74,6 +75,9 @@ class AdditionalInfoList extends Component {
           additionalFacts: factList,
           redirectToAdditionalInfo: true
         });
+      })
+      .then(() => {
+        this.getAdditionalInfo();
       });
   };
 
@@ -140,7 +144,7 @@ class AdditionalInfoList extends Component {
                 </div>
               </div>
             </section>
-            <form onSubmit={this.createANewFact}>
+            {/* <form onSubmit={this.createANewFact}>
               <div className="form-group">
                 <label htmlFor="infoImg">Fact Image</label>
                 <input
@@ -205,7 +209,7 @@ class AdditionalInfoList extends Component {
                   Add New Fact
                 </button>
               </div>
-            </form>
+            </form> */}
           </div>
         );
       }
@@ -213,7 +217,7 @@ class AdditionalInfoList extends Component {
     return (
       <div>
         <div>{additionalInfos}</div>
-        {this.state.additionalFacts.map(fact => {
+        {/* {this.state.additionalFacts.map(fact => {
           return (
             <AdditionalInfoListDummy
               key={fact._id}
@@ -226,8 +230,75 @@ class AdditionalInfoList extends Component {
               createANewFact={this.createANewFact}
             />
           );
-        })}
-
+        })} */}
+        <div>
+          <form onSubmit={this.createANewFact}>
+            <div className="form-group">
+              <label htmlFor="infoImg">Fact Image</label>
+              <input
+                className="form-control"
+                id="infoImg"
+                type="text"
+                name="infoImg"
+                onChange={this.handleFormChange}
+                value={this.state.newFacts.infoImg}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="randomFacts">Event Name</label>
+              <input
+                className="form-control"
+                id="randomFacts"
+                type="text"
+                name="randomFacts"
+                onChange={this.handleFormChange}
+                value={this.state.newFacts.randomFacts}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="nextMajorEvent">Event Description</label>
+              <textarea
+                className="form-control"
+                id="nextMajorEvent"
+                type="text"
+                name="nextMajorEvent"
+                onChange={this.handleFormChange}
+                value={this.state.newFacts.nextMajorEvent}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="eventDescription">Event Threat</label>
+              <input
+                className="form-control"
+                id="eventDescription"
+                type="text"
+                name="eventDescription"
+                onChange={this.handleFormChange}
+                value={this.state.newFacts.eventDescription}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="threatLevel">Event Location</label>
+              <input
+                className="form-control"
+                id="threatLevel"
+                type="text"
+                name="threatLevel"
+                onChange={this.handleFormChange}
+                value={this.state.newFacts.threatLevel}
+              />
+            </div>
+            <div className="form-group">
+              <button
+                className="btn btn-primary btn-block"
+                type="submit"
+                value="submit"
+              >
+                Add New Fact
+              </button>
+            </div>
+          </form>
+        </div>
         <h1>Hi Additonal List</h1>
       </div>
     );

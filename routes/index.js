@@ -29,4 +29,6 @@ router.get('/:id/info/:infoId', infoController.show)
 // router.post('/:id/info/:infoId', infoController.create)
 router.post('/:id/info', infoController.create)
 
+router.delete('/:id/info/:infoId', infoController.delete)
+
 module.exports = router

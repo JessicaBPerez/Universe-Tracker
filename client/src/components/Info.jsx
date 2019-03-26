@@ -51,7 +51,6 @@ class Info extends Component {
       .get(`/api/events/${this.props.match.params.id}`)
       .then(response => {
         console.log(response.data);
-
         this.setState({
           info: response.data
         });

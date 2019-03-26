@@ -30,7 +30,22 @@ const infoController = {
         //             res.json(newInfo)
         //         })
         // })
-        Info.create(req.body).then(event => {
+        UniverseEvent.findById(req.params.id).then((uEvent) => {
+            Info.create(req.body)
+                .then((info) => {
+                    uEvent.additionalInfo.push(info)
+                    uEvent.save()
+                    res.send(uEvent)
+                })
+
+        })
+
+        // Info.create(req.body).then(event => {
+        //     res.json(event)
+        // })
+    },
+    delete: (req, res) => {
+        Info.findByIdAndDelete(req.params.id).then(event => {
             res.json(event)
         })
     },
