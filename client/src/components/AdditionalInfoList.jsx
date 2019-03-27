@@ -98,17 +98,16 @@ class AdditionalInfoList extends Component {
                 />
                 <div className="card-body">
                   <p className="link-name" />
+                <Link
+                     to={`/events/${this.props.match.params.id}/info/${
+                     additionalInfo._id}`}
+                     >
+                    <p className="additional-facts">Additional Info</p>
+                </Link>
                   <p>
                     <strong>Random Fact: </strong>
                     {additionalInfo.randomFacts}
                   </p>
-                  <Link
-                    to={`/events/${this.props.match.params.id}/info/${
-                      additionalInfo._id
-                    }`}
-                  >
-                    Additional Info
-                  </Link>
                   <p>
                     <strong>Next Major Event: </strong>
                     {additionalInfo.nextMajorEvent}

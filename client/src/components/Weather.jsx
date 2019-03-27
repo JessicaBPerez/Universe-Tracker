@@ -5,11 +5,12 @@ const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 class Weather extends Component {
   state = {
-    weather: []
+    weatherCity: [],
+    weatherList: []
   };
 
-  componentDidMount = () => {
-    this.getWeatherData();
+  componentDidMount = async () => {
+    await this.getWeatherData();
   };
 
   getWeatherData = () => {
@@ -18,26 +19,28 @@ class Weather extends Component {
         `https://api.openweathermap.org/data/2.5/forecast?zip=30303,us&appid=${WEATHER_API_KEY}`
       )
       .then(response => {
+        // console.log(response.data);
         this.setState({
-          weather: response.data
+          weatherCity: response.data.city,
+          weatherList: response.data.list
         });
+        console.log(response.data)
       })
       .catch(err => {
         console.log("You didn't get the weather!", err);
       });
   };
-
   render() {
     return (
       <div>
         {/* {this.state.weather.map(weather => {
-          return <div>City: {weather.weather.city}</div>;
+          return <div>City: {this.state.weather.list.city}</div>;
         })} */}
 
         <h1> Where weather page will go.</h1>
-        <h1 className="text-white">{this.state.weather.cnt}</h1>
-        <h1 className="text-white">{this.state.weather.cnt}</h1>
-
+        {/* <h1 className="text-white">{this.state.weather.cnt}</h1>
+        <h1 className="text-white">{this.state.weather.cnt}</h1> */}
+        <h1>{this.state.weatherCity.name}</h1>
         {/* <h1 className="text-white">{this.state.weather}</h1> */}
       </div>
     );

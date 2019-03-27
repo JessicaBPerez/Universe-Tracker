@@ -6,13 +6,10 @@
         "axios": "^0.18.0",
         "bootstrap": "^4.3.1",
         "dotenv": "^7.0.0",
-        "materialize-css": "^1.0.0",
         "react": "^16.8.4",
         "react-dom": "^16.8.4",
-        "react-materialize": "^3.0.3",
         "react-router-dom": "^5.0.0",
         "react-scripts": "2.1.8",
-        "react-text-glitch": "0.0.4",
         "styled-components": "^4.1.3"
     },
     "proxy": "http://localhost:4500",

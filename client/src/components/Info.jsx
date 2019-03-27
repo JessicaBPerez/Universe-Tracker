@@ -121,7 +121,7 @@ class Info extends Component {
               <h3>{this.state.info.eventName}</h3>
 
               <Link to={`${this.state.info._id}/info`}>
-                Additional Info
+                <p className="additional-facts">Additional Facts</p>
               </Link>
 
               <div>
@@ -153,7 +153,7 @@ class Info extends Component {
                 onClick={this.displayEventEditForm}
                 className="btn btn-outline-info button-margin"
               >
-                Edit
+                Show Edit Form
               </button>
             </div>
           </div>

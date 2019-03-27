@@ -132,17 +132,7 @@ class UniverseEvents extends Component {
                     <strong>Event Description: </strong>
                     {event.eventDescription}
                   </p>
-                  <Link onClick={() => this.state.deleteAnEvent}>
-                    DeleteMe!
-                  </Link>
-                  <button
-                    onSubmit={() => this.state.deleteAnEvent}
-                    type="button"
-                    class="close"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                
                 </div>
               </div>
             </section>
