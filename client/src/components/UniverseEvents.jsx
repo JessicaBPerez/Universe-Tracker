@@ -141,12 +141,11 @@ class UniverseEvents extends Component {
               }}
             >
               <div className="card" style={{ width: "30rem" }}>
-                {/* <img
+                <img
                   className="card-img-top"
                   src={event.eventImg}
                   alt={event.eventName}
-                /> */}
-                <video className="card-img-top" src={event.eventImg} />
+                />
                 <div className="card-body">
                   <p className="link-name">
                     <Link to={pathname}>{event.eventName}</Link>

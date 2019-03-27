@@ -37,6 +37,14 @@ const darkAgeInfo = new Info({
     threatLevel: "Very Low"
 })
 
+const blackHoleInfo = new Info({
+    infoImg: "https://www.universetoday.com/wp-content/uploads/2006/10/2006-1025galaxies.jpg",
+    randomFacts: "Our galaxy (The Milky Way) and our nearest neighboring galaxy (Andromeda) both have at least two supermassive black holes. Around nine billion years in the future, our galaxy and Andromeda will collide with each other. This collision will cause a merging of the two supermassive black holes.",
+    nextMajorEvent: "9 billion years (estimate).",
+    eventDescription: "In about 9 billion years, the Milky Way Galaxy and Andromeda will collide. There is a 12% chance that our current solar system will be ejected out of the newly formed 'Milkdromeda' galaxy. Such an event would have no adverse effect on the system and the chances of any sort of disturbance to the Sun or planets themselves may be remote. ",
+    threatLevel: "Very Low"
+})
+
 const bigBang = new UniverseEvent({
     eventImg: "https://i.kinja-img.com/gawker-media/image/upload/t_original/ah4plvlhlrcd16pxjvbz.jpg",
     eventName: "The Big Bang",
@@ -65,7 +73,7 @@ const oxygenPoisoning = new UniverseEvent({
 })
 
 const darkAge = new UniverseEvent({
-    eventImg: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Big_Crunch.gif",
+    eventImg: "https://www.pbs.org/wgbh/nova/media/original_images/cosmic-dark-age.jpg",
     eventName: "The Dark Ages",
     eventCategoryThreat: "None",
     eventLocation: "Everywhere",
@@ -73,11 +81,20 @@ const darkAge = new UniverseEvent({
     additionalInfo: [darkAgeInfo]
 })
 
+const blackHole = new UniverseEvent({
+    eventImg: "https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC82NDYvb3JpZ2luYWwvYmxhY2staG9sZS5qcGc=",
+    eventName: "Black Hole",
+    eventCategoryThreat: "Very Low",
+    eventLocation: "Near Earth: Sagittarius A Constellation.",
+    eventDescription: "A region of spacetime exhibiting such strong gravitational effects that nothing, not even particles and electromagnetic radiation such as light—can escape from inside it. ",
+    additionalInfo: [blackHoleInfo]
+})
+
 
 UniverseEvent.remove({})
-    .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge]))
+    .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge, blackHole]))
 Info.remove({})
-    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo]))
+    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo, blackHoleInfo]))
     .then(() => {
         console.log("seeded successfully");
         mongoose.connection.close();
