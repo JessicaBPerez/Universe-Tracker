@@ -130,7 +130,7 @@ class AdditionalInfoList extends Component {
     );
     return (
       <div>
-        <div>{additionalInfos}</div>
+        <div class="card-container">{additionalInfos}</div>
         <div>
           <form onSubmit={this.createANewFact}>
             <div className="form-group">

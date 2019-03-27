@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const XU_WEATHER_API_KEY = process.env.REACT_APP_API_XU_KEY;
 const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 class Weather extends Component {
@@ -39,7 +38,7 @@ class Weather extends Component {
         <h1 className="text-white">{this.state.weather.cnt}</h1>
         <h1 className="text-white">{this.state.weather.cnt}</h1>
 
-        {/* <h1 className="text-white">{this.state.weather}</h1> */}
+        <h1 className="text-white">{this.state.weather}</h1>
       </div>
     );
   }

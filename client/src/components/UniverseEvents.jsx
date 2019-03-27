@@ -74,7 +74,6 @@ class UniverseEvents extends Component {
       this.setState({ redirectToHome: true });
     });
   };
-  // Deletes an event
 
   //Toggles the Edit form
   displayUniverseEventForm = () => {

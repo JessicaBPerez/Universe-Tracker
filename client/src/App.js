@@ -7,7 +7,6 @@ import UniverseEvents from "./components/UniverseEvents";
 import Info from "./components/Info.jsx";
 import StarTracker from "./components/StarTracker.jsx";
 import Weather from "./components/Weather";
-import AdditionalInfo from "./components/AdditionalInfo.jsx";
 import AdditionalInfoList from "./components/AdditionalInfoList";
 import AdditionalInfoListDummy from "./components/AdditionalInfoListDummy";
 
@@ -47,11 +46,6 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={UniverseEvents} />
-              {/* <Route exact path="/events/:id/info/:infoId" component={Info} /> */}
-              {/* <Route
-                exact
-                path="/events/:id"
-                component={UniverseEventsIndividual} */}
               />
               <Route exact path="/events/:id" component={Info} />
               <Route
@@ -59,11 +53,6 @@ class App extends Component {
                 path="/events/:id/info"
                 component={AdditionalInfoList}
               />
-              {/* <Route
-                exact
-                path="/events/:id/info/:infoId"
-                component={AdditionalInfo}
-              /> */}
               <Route
                 exact
                 path="/events/:id/info/:infoId"
