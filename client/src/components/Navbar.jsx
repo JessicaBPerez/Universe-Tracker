@@ -41,9 +41,9 @@ class Navbar extends Component {
                   </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                  {/* <Link to="/weather" className="nav-link js-scroll-trigger">
+                  <Link to={`/weather`} className="nav-link js-scroll-trigger">
                     Weather
-                  </Link> */}
+                  </Link>
                 </li>
                 <li className="nav-item" role="presentation">
                   <a className="nav-link js-scroll-trigger" href="/tracker">

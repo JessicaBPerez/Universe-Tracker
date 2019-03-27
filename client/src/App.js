@@ -43,8 +43,8 @@ class App extends Component {
     return (
       <div className="App hero-bkg-animated">
         <div>
-          <Navbar />
           <Router>
+            <Navbar />
             <Switch>
               <Route exact path="/" component={UniverseEvents} />
               {/* <Route exact path="/events/:id/info/:infoId" component={Info} /> */}
