@@ -30,11 +30,11 @@ const oxygenPoisoningInfo = new Info({
 })
 
 const darkAgeInfo = new Info({
-    infoImg: "",
-    randomFacts: "",
-    nextMajorEvent: "",
-    eventDescription: "",
-    threatLevel: ""
+    infoImg: "https://www.universetoday.com/wp-content/uploads/2006/10/2006-1025galaxies.jpg",
+    randomFacts: "During these Dark Ages, the Universe was transparent. Clouds of hydrogen collapsed very slowly to form stars and galaxies and as a result, there were no new sources of light. The only photons (electromagnetic radiation, or 'light') in the universe were those released during decoupling (visible today as the cosmic microwave background).",
+    nextMajorEvent: "9.8 Billion years.",
+    eventDescription: "From about 9.8 billion years of cosmic time, the slowing expansion of space gradually begins to accelerate under the influence of dark energy, which may be a scalar field throughout our universe. The dark energy, in conjuction with dark matter, all of the celestial bodies and objects will be carried away from each other by gravitational forces. The Universe will once again darken, and eventually cease to exist. ",
+    threatLevel: "Very Low"
 })
 
 const bigBang = new UniverseEvent({
@@ -65,19 +65,19 @@ const oxygenPoisoning = new UniverseEvent({
 })
 
 const darkAge = new UniverseEvent({
-    eventImg: "",
-    eventName: "",
-    eventCategoryThreat: "",
-    eventLocation: "",
-    eventDescription: "",
-    additionalInfo: ""
+    eventImg: "https://www.pbs.org/wgbh/nova/media/original_images/cosmic-dark-age.jpg",
+    eventName: "The Dark Ages",
+    eventCategoryThreat: "None",
+    eventLocation: "Everywhere",
+    eventDescription: "The dark ages represent our origins — when the very first stars formed and created the heavy elements we are made of today.",
+    additionalInfo: [darkAgeInfo]
 })
 
 
 UniverseEvent.remove({})
     .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge]))
 Info.remove({})
-    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo]))
+    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo]))
     .then(() => {
         console.log("seeded successfully");
         mongoose.connection.close();
