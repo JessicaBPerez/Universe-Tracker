@@ -38,7 +38,7 @@ class Weather extends Component {
         <h1 className="text-white">{this.state.weather.cnt}</h1>
         <h1 className="text-white">{this.state.weather.cnt}</h1>
 
-        <h1 className="text-white">{this.state.weather}</h1>
+        {/* <h1 className="text-white">{this.state.weather}</h1> */}
       </div>
     );
   }

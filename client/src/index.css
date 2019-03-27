@@ -81,6 +81,10 @@ code {
     justify-content: space-around;
 }
 
+.large-card-style {
+    height: 30rem;
+}
+
 @media (min-width:992px) {
     .navbar-expand-lg {
         -ms-flex-flow: row nowrap;
@@ -260,15 +264,17 @@ button:focus {
 
 .product-info {
     /* background-color: rgb(240, 240, 240); */
-    border: solid white;
+    border: solid 1px white;
     border-radius: 2%;
 }
 
+.card-border {
+    border: solid 1px white;
+    border-radius: 1.5%;
+}
 
-/* Description and Specification Page*/
 
-
-/*Design Pages*/
+/*Info Pages*/
 
 .category-design h3 {
     font-family: "playfair display sc";
@@ -278,10 +284,6 @@ button:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.bespoke-logo {
-    margin-left: 4rem;
 }
 
 .link-name {

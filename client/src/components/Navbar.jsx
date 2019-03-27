@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //Whole Navbar Styling goes here
 
@@ -13,7 +12,7 @@ class Navbar extends Component {
           id="mainNav"
         >
           <div className="container">
-            <a className="navbar-brand brand-properties" href="#page-top">
+            <a className="navbar-brand brand-properties" href="/">
               Universe Tracker
             </a>
             <button

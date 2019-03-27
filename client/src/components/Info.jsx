@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
@@ -19,7 +20,8 @@ class Info extends Component {
       },
       isEventEditFormDisplayed: false,
       redirectToHome: false,
-      updateConfirmationDisplay: false
+      updateConfirmationDisplay: false,
+      show: false
     };
   }
 
@@ -90,6 +92,7 @@ class Info extends Component {
     this.getIndividualEvent();
   }
 
+
   render() {
     if (this.state.redirectToHome) {
       return <Redirect to="/" />;
@@ -98,30 +101,28 @@ class Info extends Component {
     return (
       <div>
         <div>
-          <h1>This is where your individual info will go.</h1>
+          <h1>Delete or Edit this Fact</h1>
         </div>
-        <h1>This is where you info will go. Look below for reference.</h1>
+  
 
         <div
           className=" justify-content-center container"
           style={{ width: "90rem" }}
         >
-          <div className="row align-items-center product-info card-style">
+          <div className="row align-items-center large-card-style">
             <div className="col-md-6">
               <img
                 alt={this.state.info.eventName}
-                className="img-thumbnail figure-img img-fluid rounded"
+                className="img-fluid rounded"
                 src={this.state.info.eventImg}
               />
             </div>
-            <div className="col-md-6 category-design">
-              <h3>
-                <a href="https://en.wikipedia.org/wiki/Abiogenesis">
-                  {this.state.info.eventName}
-                </a>
-              </h3>
+            <div className="col-md-6 category-design text-white">
+              <h3>{this.state.info.eventName}</h3>
 
-              <Link to={`${this.state.info._id}/info`}>Additional Info</Link>
+              <Link to={`${this.state.info._id}/info`}>
+                Additional Info
+              </Link>
 
               <div>
                 <p>
@@ -157,6 +158,7 @@ class Info extends Component {
             </div>
           </div>
         </div>
+       
         <div>
           <br />
           <br />
@@ -187,7 +189,9 @@ class Info extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventDescription">Event Description</label>
+                    <label htmlFor="eventDescription">
+                      Event Description
+                    </label>
                     <textarea
                       className="form-control"
                       id="eventDescription"
@@ -198,7 +202,9 @@ class Info extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventCategoryThreat">Event Threat</label>
+                    <label htmlFor="eventCategoryThreat">
+                      Event Threat
+                    </label>
                     <input
                       className="form-control"
                       id="eventCategoryThreat"
@@ -224,6 +230,7 @@ class Info extends Component {
                       className="btn btn-outline-info btn-block"
                       type="submit"
                       value="submit"
+                      value="Show Modal"
                     >
                       Edit Event
                     </button>

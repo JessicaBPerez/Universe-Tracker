@@ -100,7 +100,7 @@ class UniverseEvents extends Component {
       let pathname = `/events/${event._id}`;
       return (
         <div>
-          <h2 className="text-white">Hi!</h2>
+          <h2 className="text-white">{event.eventName}</h2>
           <div>
             <section
               className=" card-margin card-style"
