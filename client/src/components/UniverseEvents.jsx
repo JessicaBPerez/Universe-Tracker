@@ -11,8 +11,7 @@ class UniverseEvents extends Component {
       eventName: "",
       eventCategoryThreat: "",
       eventLocation: "",
-      eventDescription: "",
-      additionalInfo: []
+      eventDescription: ""
     },
     isUniverseEventFormDisplayed: false,
     redirectToHome: false
@@ -25,38 +24,11 @@ class UniverseEvents extends Component {
     this.getAllEvents();
   };
 
-  //what I JUST added
-  // componentDidMount() {
-  //   console.log("infoId: ", this.props.match.params.infoId);
-  //   console.log("Hey, you're getting each event!");
-  //   this.getIndividualEvent();
-  // }
-  //Here too
-  //   getIndividualEvent = () => {
-  //     axios
-  //       .get(
-  //         `/api/events/${this.props.match.params.id}/info/${
-  //           this.props.match.params.infoId
-  //         }`
-  //       )
-  //       .then(response => {
-  //         console.log(response.data);
-
-  //         this.setState({
-  //           info: response.data
-  //         });
-  //       })
-  //       .catch(err => {
-  //         console.log("Go back, goof!", err);
-  //       });
-  //   };
-
   //Function to get all Facts from axios via our API
   getAllEvents = () => {
     axios
       .get(`/api/events`)
       .then(response => {
-        console.log(response.data);
         const events = response.data;
         this.setState({ events: events });
       })
@@ -126,7 +98,6 @@ class UniverseEvents extends Component {
       return <Redirect to="/" />;
     }
     const events = this.state.events.map((event, index) => {
-      //   let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
       let pathname = `/events/${event._id}`;
       return (
         <div>
@@ -182,13 +153,6 @@ class UniverseEvents extends Component {
     });
     return (
       <div>
-        {/* {this.state.events.map(event => {
-          return (
-            <div key={event._id}>
-              <Link to={`/${event._id}`}>{event.eventName}</Link>
-            </div>
-          );
-        })} */}
         <div class="card-container">{events}</div>
 
         <h1>Want to add a new Universe Event? You can! Click Below</h1>

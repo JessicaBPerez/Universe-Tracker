@@ -7,7 +7,6 @@ class Info extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   singleEvent: this.props.match.infoId,
       singleEvent: this.props.match.params.id,
 
       info: {
@@ -25,7 +24,6 @@ class Info extends Component {
   }
 
   componentDidMount = () => {
-    console.log("HEY!!!");
     this.getSingleEvent();
   };
 

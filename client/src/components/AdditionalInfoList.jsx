@@ -28,7 +28,6 @@ class AdditionalInfoList extends Component {
     axios
       .get(`/api/events/${this.props.match.params.id}/info`)
       .then(response => {
-        console.log(response.data);
         this.setState({
           additionalFacts: response.data
         });
@@ -58,9 +57,6 @@ class AdditionalInfoList extends Component {
       })
       .then(response => {
         const factList = [...this.state.additionalFacts];
-        console.log(factList);
-
-        // console.log("Array".Object.values(factList));
         factList.push(response.data);
         this.setState({
           newFacts: {
@@ -71,7 +67,6 @@ class AdditionalInfoList extends Component {
             threatLevel: "",
             info: []
           },
-          // isAdditionalInfoFormDisplayed: false,
           additionalFacts: factList,
           redirectToAdditionalInfo: true
         });
@@ -84,8 +79,6 @@ class AdditionalInfoList extends Component {
   render() {
     const additionalInfos = this.state.additionalFacts.map(
       (additionalInfo, index) => {
-        // let pathname = `/events/${event._id}/info/${info._id}`;
-        //   let pathname
         return (
           <div>
             <div key={index}>{additionalInfo.eventDescription}</div>
@@ -104,9 +97,7 @@ class AdditionalInfoList extends Component {
                   alt=""
                 />
                 <div className="card-body">
-                  <p className="link-name">
-                    {/* <Link to={pathname}>{event.eventName}</Link> */}
-                  </p>
+                  <p className="link-name" />
                   <p>
                     <strong>Random Fact: </strong>
                     {additionalInfo.randomFacts}
@@ -130,86 +121,9 @@ class AdditionalInfoList extends Component {
                     <strong>Threat Level: </strong>
                     {additionalInfo.threatLevel}
                   </p>
-                  {/* <Link onClick={() => this.state.deleteAnEvent}>
-                    DeleteMe!
-                  </Link> */}
-                  <button
-                    // onSubmit={() => this.state.deleteAnEvent}
-                    type="button"
-                    class="close"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                 </div>
               </div>
             </section>
-            {/* <form onSubmit={this.createANewFact}>
-              <div className="form-group">
-                <label htmlFor="infoImg">Fact Image</label>
-                <input
-                  className="form-control"
-                  id="infoImg"
-                  type="text"
-                  name="infoImg"
-                  onChange={this.handleFormChange}
-                  value={this.state.newFacts.infoImg}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="randomFacts">Event Name</label>
-                <input
-                  className="form-control"
-                  id="randomFacts"
-                  type="text"
-                  name="randomFacts"
-                  onChange={this.handleFormChange}
-                  value={this.state.newFacts.randomFacts}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="nextMajorEvent">Event Description</label>
-                <textarea
-                  className="form-control"
-                  id="nextMajorEvent"
-                  type="text"
-                  name="nextMajorEvent"
-                  onChange={this.handleFormChange}
-                  value={this.state.newFacts.nextMajorEvent}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="eventDescription">Event Threat</label>
-                <input
-                  className="form-control"
-                  id="eventDescription"
-                  type="text"
-                  name="eventDescription"
-                  onChange={this.handleFormChange}
-                  value={this.state.newFacts.eventDescription}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="threatLevel">Event Location</label>
-                <input
-                  className="form-control"
-                  id="threatLevel"
-                  type="text"
-                  name="threatLevel"
-                  onChange={this.handleFormChange}
-                  value={this.state.newFacts.threatLevel}
-                />
-              </div>
-              <div className="form-group">
-                <button
-                  className="btn btn-primary btn-block"
-                  type="submit"
-                  value="submit"
-                >
-                  Add New Fact
-                </button>
-              </div>
-            </form> */}
           </div>
         );
       }
@@ -217,20 +131,6 @@ class AdditionalInfoList extends Component {
     return (
       <div>
         <div>{additionalInfos}</div>
-        {/* {this.state.additionalFacts.map(fact => {
-          return (
-            <AdditionalInfoListDummy
-              key={fact._id}
-              infoImg={fact.infoImg}
-              randomFacts={fact.randomFacts}
-              nextMajorEvent={fact.nextMajorEvent}
-              eventDescription={fact.eventDescription}
-              threatLevel={fact.threatLevel}
-              handleFormChange={this.handleFormChange}
-              createANewFact={this.createANewFact}
-            />
-          );
-        })} */}
         <div>
           <form onSubmit={this.createANewFact}>
             <div className="form-group">
