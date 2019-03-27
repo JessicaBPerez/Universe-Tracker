@@ -53,6 +53,30 @@ const gammaRayBurstsInfo = new Info({
     threatLevel: "Very Low"
 })
 
+const wormHoleInfo = new Info({
+    infoImg: "https://roseramblesdotorg.files.wordpress.com/2018/12/5b73c7896940047961d6ab61e69637d7.jpg",
+    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
+    nextMajorEvent: "Unknown.",
+    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
+    threatLevel: "Very Low"
+})
+
+const quantumEntaglementInfo = new Info({
+    infoImg: "https://www.thoughtco.com/thmb/PJWuBLEpSk2Gh6NacYSjRbJIMQI=/2080x1441/filters:fill(auto,1)/GettyImages-623682717-57dd5b693df78c9ccef52b71.jpg",
+    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
+    nextMajorEvent: "Unknown.",
+    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
+    threatLevel: "Very Low"
+})
+
+const fermiParadoxInfo = new Info({
+    infoImg: "https://thenypost.files.wordpress.com/2016/06/160616-fermi-paradox-solved-index.jpg?quality=90&strip=all",
+    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
+    nextMajorEvent: "Unknown.",
+    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
+    threatLevel: "Very Low"
+})
+
 const bigBang = new UniverseEvent({
     eventImg: "https://i.kinja-img.com/gawker-media/image/upload/t_original/ah4plvlhlrcd16pxjvbz.jpg",
     eventName: "The Big Bang",
@@ -107,11 +131,37 @@ const gammaRayBursts = new UniverseEvent({
     additionalInfo: [gammaRayBurstsInfo]
 })
 
+const wormHole = new UniverseEvent({
+    eventImg: "https://roseramblesdotorg.files.wordpress.com/2018/12/5b73c7896940047961d6ab61e69637d7.jpg",
+    eventName: "Worm Holes",
+    eventCategoryThreat: "Moderate",
+    eventLocation: "Earth",
+    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    additionalInfo: [wormHoleInfo]
+})
+
+const quantumEntaglement = new UniverseEvent({
+    eventImg: "https://www.thoughtco.com/thmb/PJWuBLEpSk2Gh6NacYSjRbJIMQI=/2080x1441/filters:fill(auto,1)/GettyImages-623682717-57dd5b693df78c9ccef52b71.jpg",
+    eventName: "Quantum Entanglement",
+    eventCategoryThreat: "Moderate",
+    eventLocation: "Earth",
+    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    additionalInfo: [quantumEntaglementInfo]
+})
+
+const fermiParadox = new UniverseEvent({
+    eventImg: "https://thenypost.files.wordpress.com/2016/06/160616-fermi-paradox-solved-index.jpg?quality=90&strip=all",
+    eventName: "Fermi Paradox",
+    eventCategoryThreat: "Moderate",
+    eventLocation: "Earth",
+    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    additionalInfo: [fermiParadoxInfo]
+})
 
 UniverseEvent.remove({})
-    .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge, blackHole, gammaRayBursts]))
+    .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge, blackHole, gammaRayBursts, wormHole, quantumEntaglement, fermiParadox]))
 Info.remove({})
-    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo, blackHoleInfo, gammaRayBurstsInfo]))
+    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo, blackHoleInfo, gammaRayBurstsInfo, wormHoleInfo, quantumEntaglementInfo, fermiParadoxInfo]))
     .then(() => {
         console.log("seeded successfully");
         mongoose.connection.close();
