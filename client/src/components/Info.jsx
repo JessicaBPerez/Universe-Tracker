@@ -18,19 +18,8 @@ class Info extends Component {
         eventDescription: "",
         additionalInfo: []
       },
-      event: {},
-      editInfo: {
-        eventImg: "",
-        eventName: "",
-        eventCategoryThreat: "",
-        eventLocation: "",
-        eventDescription: "",
-        additionalInfo: [],
-        info: []
-      },
       isEventEditFormDisplayed: false,
       redirectToHome: false,
-      editEvent: {},
       updateConfirmationDisplay: false
     };
   }
@@ -50,7 +39,6 @@ class Info extends Component {
     axios
       .get(`/api/events/${this.props.match.params.id}`)
       .then(response => {
-        console.log(response.data);
         this.setState({
           info: response.data
         });
@@ -97,51 +85,25 @@ class Info extends Component {
       .then(response => {
         this.displayEventEditForm();
         this.toggleUpdateConfirmationMessage();
-        // this.setState({ info: response.data, isEventEditFormDisplayed: false });
       });
   };
 
   componentDidMount() {
-    console.log("infoId: ", this.props.match.params.infoId);
-    console.log("Hey, you're getting each event!");
     this.getIndividualEvent();
   }
-
-  // getIndividualEvent = () => {
-  //   axios
-  //     .get(
-  //       `/api/events/${this.props.match.params.id}/info/${
-  //         this.props.match.params.infoId
-  //       }`
-  //     )
-  //     .then(response => {
-  //       console.log(response.data);
-
-  //       this.setState({
-  //         info: response.data
-  //       });
-  //     })
-  //     .catch(err => {
-  //       console.log("Go back, goof!", err);
-  //     });
-  // };
 
   render() {
     if (this.state.redirectToHome) {
       return <Redirect to="/" />;
     }
 
-    // let pathname = `/events/${event._id}/info/${event.additionalInfo[0]._id}`;
     return (
       <div>
         <div>
           <h1>This is where your individual info will go.</h1>
         </div>
         <h1>This is where you info will go. Look below for reference.</h1>
-        {/* {this.state.info.eventDescription}
-        {info} */}
-        {/* <button onClick={this.deleteAnEvent}>Delete</button> */}
-        {/* <div>{this.state.info.additionalInfo}</div> */}
+
         <div
           className=" justify-content-center container"
           style={{ width: "90rem" }}
@@ -160,7 +122,7 @@ class Info extends Component {
                   {this.state.info.eventName}
                 </a>
               </h3>
-              {/* <Link to={pathname}>Additional Information</Link> */}
+
               <Link to={`${this.state.info._id}/info`}>Additional Info</Link>
 
               <div>
