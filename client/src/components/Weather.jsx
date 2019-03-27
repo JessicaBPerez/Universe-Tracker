@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ReactWeather from "react-open-weather";
+import "react-open-weather/lib/css/ReactWeather.css";
+const XU_WEATHER_API_KEY = process.env.REACT_APP_API_XU_KEY;
 const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+var weather = require("openweather-apis");
+weather.setLang("en");
+weather.setCity("Atlanta");
 
 class Weather extends Component {
   state = {
