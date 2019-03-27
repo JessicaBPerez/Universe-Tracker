@@ -46,10 +46,10 @@ const blackHoleInfo = new Info({
 })
 
 const gammaRayBurstsInfo = new Info({
-    infoImg: "https://www.universetoday.com/wp-content/uploads/2006/10/2006-1025galaxies.jpg",
-    randomFacts: "During these Dark Ages, the Universe was transparent. Clouds of hydrogen collapsed very slowly to form stars and galaxies and as a result, there were no new sources of light. The only photons (electromagnetic radiation, or 'light') in the universe were those released during decoupling (visible today as the cosmic microwave background).",
-    nextMajorEvent: "9.8 Billion years.",
-    eventDescription: "From about 9.8 billion years of cosmic time, the slowing expansion of space gradually begins to accelerate under the influence of dark energy, which may be a scalar field throughout our universe. The dark energy, in conjuction with dark matter, all of the celestial bodies and objects will be carried away from each other by gravitational forces. The Universe will once again darken, and eventually cease to exist. ",
+    infoImg: "https://sen.com/thumbs/1024x576/img/258d8bcf105b49d6ab728f3df8fbe55f.jpg",
+    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
+    nextMajorEvent: "Unknown.",
+    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
     threatLevel: "Very Low"
 })
 
@@ -99,12 +99,12 @@ const blackHole = new UniverseEvent({
 })
 
 const gammaRayBursts = new UniverseEvent({
-    eventImg: "https://www.pbs.org/wgbh/nova/media/original_images/cosmic-dark-age.jpg",
-    eventName: "The Dark Ages",
-    eventCategoryThreat: "None",
-    eventLocation: "Everywhere",
-    eventDescription: "The dark ages represent our origins — when the very first stars formed and created the heavy elements we are made of today.",
-    additionalInfo: [darkAgeInfo]
+    eventImg: "https://sen.com/thumbs/1024x576/img/258d8bcf105b49d6ab728f3df8fbe55f.jpg",
+    eventName: "Gamma Ray Bursts",
+    eventCategoryThreat: "Moderate",
+    eventLocation: "Earth",
+    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    additionalInfo: [gammaRayBurstsInfo]
 })
 
 
