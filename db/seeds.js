@@ -45,6 +45,14 @@ const blackHoleInfo = new Info({
     threatLevel: "Very Low"
 })
 
+const gammaRayBurstsInfo = new Info({
+    infoImg: "https://www.universetoday.com/wp-content/uploads/2006/10/2006-1025galaxies.jpg",
+    randomFacts: "During these Dark Ages, the Universe was transparent. Clouds of hydrogen collapsed very slowly to form stars and galaxies and as a result, there were no new sources of light. The only photons (electromagnetic radiation, or 'light') in the universe were those released during decoupling (visible today as the cosmic microwave background).",
+    nextMajorEvent: "9.8 Billion years.",
+    eventDescription: "From about 9.8 billion years of cosmic time, the slowing expansion of space gradually begins to accelerate under the influence of dark energy, which may be a scalar field throughout our universe. The dark energy, in conjuction with dark matter, all of the celestial bodies and objects will be carried away from each other by gravitational forces. The Universe will once again darken, and eventually cease to exist. ",
+    threatLevel: "Very Low"
+})
+
 const bigBang = new UniverseEvent({
     eventImg: "https://i.kinja-img.com/gawker-media/image/upload/t_original/ah4plvlhlrcd16pxjvbz.jpg",
     eventName: "The Big Bang",
@@ -83,18 +91,27 @@ const darkAge = new UniverseEvent({
 
 const blackHole = new UniverseEvent({
     eventImg: "https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC82NDYvb3JpZ2luYWwvYmxhY2staG9sZS5qcGc=",
-    eventName: "Black Hole",
+    eventName: "Black Holes",
     eventCategoryThreat: "Very Low",
     eventLocation: "Near Earth: Sagittarius A Constellation.",
     eventDescription: "A region of spacetime exhibiting such strong gravitational effects that nothing, not even particles and electromagnetic radiation such as light—can escape from inside it. ",
     additionalInfo: [blackHoleInfo]
 })
 
+const gammaRayBursts = new UniverseEvent({
+    eventImg: "https://www.pbs.org/wgbh/nova/media/original_images/cosmic-dark-age.jpg",
+    eventName: "The Dark Ages",
+    eventCategoryThreat: "None",
+    eventLocation: "Everywhere",
+    eventDescription: "The dark ages represent our origins — when the very first stars formed and created the heavy elements we are made of today.",
+    additionalInfo: [darkAgeInfo]
+})
+
 
 UniverseEvent.remove({})
-    .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge, blackHole]))
+    .then(() => UniverseEvent.create([bigBang, abiogenesis, oxygenPoisoning, darkAge, blackHole, gammaRayBursts]))
 Info.remove({})
-    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo, blackHoleInfo]))
+    .then(() => Info.create([bigBangInfo, abiogenesisInfo, oxygenPoisoningInfo, darkAgeInfo, blackHoleInfo, gammaRayBurstsInfo]))
     .then(() => {
         console.log("seeded successfully");
         mongoose.connection.close();
