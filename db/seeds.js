@@ -65,7 +65,7 @@ const oxygenPoisoning = new UniverseEvent({
 })
 
 const darkAge = new UniverseEvent({
-    eventImg: "https://www.pbs.org/wgbh/nova/media/original_images/cosmic-dark-age.jpg",
+    eventImg: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Big_Crunch.gif",
     eventName: "The Dark Ages",
     eventCategoryThreat: "None",
     eventLocation: "Everywhere",
