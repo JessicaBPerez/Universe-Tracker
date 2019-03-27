@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link, Redirect } from "react-router-dom";
 
 //Whole Navbar Styling goes here
 

@@ -13,7 +13,6 @@ class Weather extends Component {
   };
 
   getWeatherData = () => {
-    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/forecast?zip=30303,us&appid=${WEATHER_API_KEY}`
@@ -37,6 +36,8 @@ class Weather extends Component {
 
         <h1> Where weather page will go.</h1>
         <h1 className="text-white">{this.state.weather.cnt}</h1>
+        <h1 className="text-white">{this.state.weather.cnt}</h1>
+
         {/* <h1 className="text-white">{this.state.weather}</h1> */}
       </div>
     );
