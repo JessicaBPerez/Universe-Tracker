@@ -38,7 +38,7 @@ const darkAgeInfo = new Info({
 })
 
 const blackHoleInfo = new Info({
-    infoImg: "https://www.universetoday.com/wp-content/uploads/2006/10/2006-1025galaxies.jpg",
+    infoImg: "http://www.astronomy.com/-/media/Images/News%20and%20Observing/News/2019/01/BlackHoleTravel.jpg?mw=600",
     randomFacts: "Our galaxy (The Milky Way) and our nearest neighboring galaxy (Andromeda) both have at least two supermassive black holes. Around nine billion years in the future, our galaxy and Andromeda will collide with each other. This collision will cause a merging of the two supermassive black holes.",
     nextMajorEvent: "9 billion years (estimate).",
     eventDescription: "In about 9 billion years, the Milky Way Galaxy and Andromeda will collide. There is a 12% chance that our current solar system will be ejected out of the newly formed 'Milkdromeda' galaxy. Such an event would have no adverse effect on the system and the chances of any sort of disturbance to the Sun or planets themselves may be remote. ",
@@ -46,7 +46,7 @@ const blackHoleInfo = new Info({
 })
 
 const gammaRayBurstsInfo = new Info({
-    infoImg: "https://sen.com/thumbs/1024x576/img/258d8bcf105b49d6ab728f3df8fbe55f.jpg",
+    infoImg: "https://media4.s-nbcnews.com/j/streams/2013/november/131121/2d9751894-131121-science-grb-11a.nbcnews-ux-2880-1000.jpg",
     randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
     nextMajorEvent: "Unknown.",
     eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
