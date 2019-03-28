@@ -16,14 +16,6 @@ The goal of this project was to utilize our knowledge of React, the Mongo databa
 
 <img src= "images/Fact.png" alt="Universe Tracker Fact Wireframe">
 
-#### Additional Info Page
-
-<img src= "images/Additional_Info_Page.png" alt="Universe Tracker Info Wireframe">
-
-#### Weather Page
-
-<img src= "images/Weather_Page.png" alt="Universe Tracker Weather Wireframe">
-
 ## ERD
 
 <img src= "images/Database_ERD.png" alt="ERD Chart">
