@@ -71,10 +71,10 @@ const quantumEntaglementInfo = new Info({
 
 const fermiParadoxInfo = new Info({
     infoImg: "https://thenypost.files.wordpress.com/2016/06/160616-fermi-paradox-solved-index.jpg?quality=90&strip=all",
-    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
+    randomFacts: "According to the Great Filter theory, there is some major hurdle that keeps advanced civilizations from reaching the stage where they could be discovered. So what about our advanced civilization? Either we are approaching our own great filter – meaning we’re barreling toward an extinction-level event – or we've already past it, meaning we are, indeed, alone in the universe.Even scarier ? It may be that sufficiently advanced civilizations don 't annihilate themselves, but others. There may be forces out there that exterminate advanced civilizations. For this reason, Stephen Hawking recommends that we don't broadcast our presence to the universe– whatever is out there, it 's better if they don't find out about us.",
     nextMajorEvent: "Unknown.",
-    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
-    threatLevel: "Very Low"
+    eventDescription: "It may be that intelligent life exists, but it's just too expensive, complicated, and difficult for them to want to bother traveling. Alternately, they may just not want to come find us – we can 't assume all intelligent life would be as curious or as nomadic as we are.  Some scientists have argued that as life forms become more advanced, they may also become more isolated, preferring virtual reality worlds to space exploration. ",
+    threatLevel: "Moderate"
 })
 
 const bigBang = new UniverseEvent({
@@ -82,7 +82,7 @@ const bigBang = new UniverseEvent({
     eventName: "The Big Bang",
     eventCategoryThreat: "None",
     eventLocation: "Unknown",
-    eventDescription: "The creation of the known Universe.",
+    eventDescription: "The Big Bang Theory is the leading explanation about how the universe began. At its simplest, it says the universe as we know it started with a small singularity, then inflated over the next 13.8 billion years to the cosmos that we know today.",
     additionalInfo: [bigBangInfo]
 })
 
@@ -153,8 +153,8 @@ const fermiParadox = new UniverseEvent({
     eventImg: "https://thenypost.files.wordpress.com/2016/06/160616-fermi-paradox-solved-index.jpg?quality=90&strip=all",
     eventName: "Fermi Paradox",
     eventCategoryThreat: "Moderate",
-    eventLocation: "Earth",
-    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    eventLocation: "Earth (that we know of)",
+    eventDescription: "Fermi’s Paradox is the apparent contradiction between the high probability of the existence of extraterrestrial civilizations and the lack of contact with such civilizations.",
     additionalInfo: [fermiParadoxInfo]
 })
 
