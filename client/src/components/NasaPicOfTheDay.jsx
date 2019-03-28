@@ -29,7 +29,7 @@ export default class NasaPicOfTheDay extends Component {
   render() {
     return (
       <div>
-        <h1 className="container glitch button-margin-all">
+        <h1 className="glitch button-margin-all font-style">
           Nasa Pic of the Day
         </h1>
         <div
