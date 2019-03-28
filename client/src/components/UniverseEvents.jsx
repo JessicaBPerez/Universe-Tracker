@@ -142,9 +142,10 @@ class UniverseEvents extends Component {
     return (
       <div>
         <div class="card-container">{events}</div>
-
-        <h1>Want to add a new Universe Event? You can! Click Below</h1>
-
+        <h1 className="container">
+          Want to add your own Universe Event? Click Below and fill out the
+          card.
+        </h1>
         <button
           className="btn btn-light "
           onClick={this.displayUniverseEventForm}

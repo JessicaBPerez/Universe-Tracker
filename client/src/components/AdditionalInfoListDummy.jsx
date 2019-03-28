@@ -66,48 +66,51 @@ class AdditionalInfoListDummy extends Component {
     }
     return (
       <div>
-        <h1>Where delete goes.</h1>
-        
-            <div
-                className=" justify-content-center container"
-                style={{ width: "90rem" }}
-            >
-                <div className="row align-items-center large-card-style">
-                    <div className="col-md-6">
-                        <img
-                            alt=""
-                            className="img-fluid rounded"
-                            src={this.state.individualInfo.infoImg}
-                        />
-                    </div>
-                    <div className="col-md-6 category-design text-white">
-                        <div>
-                            <p>
-                                <strong>Random Fact: </strong>
-                                {this.state.individualInfo.randomFacts}
-                            </p>
-                        </div>
-                        <div>
-                            <p>
-                                <strong>Next Major Event: </strong>
-                                {this.state.individualInfo.nextMajorEvent}
-                            </p>
-                        </div>
-                        <div className="getting-started-info">
-                            <p>
-                                <strong>Event Description: </strong>
-                                {this.state.individualInfo.eventDescription}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <button
-                    onClick={this.deleteAnInfo}
-                    className="btn btn-outline-danger main"
-                >
-                    Delete This Fact
-        </button>
+        <h1 className="container">
+          Changed your mind about this note / fact? No probem, just delete it
+          below.
+        </h1>
+
+        <div
+          className=" justify-content-center container"
+          style={{ width: "90rem" }}
+        >
+          <div className="row align-items-center large-card-style">
+            <div className="col-md-6">
+              <img
+                alt=""
+                className="img-fluid rounded"
+                src={this.state.individualInfo.infoImg}
+              />
             </div>
+            <div className="col-md-6 category-design text-white">
+              <div>
+                <p>
+                  <strong>Random Fact: </strong>
+                  {this.state.individualInfo.randomFacts}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <strong>Next Major Event: </strong>
+                  {this.state.individualInfo.nextMajorEvent}
+                </p>
+              </div>
+              <div className="getting-started-info">
+                <p>
+                  <strong>Event Description: </strong>
+                  {this.state.individualInfo.eventDescription}
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={this.deleteAnInfo}
+            className="btn btn-outline-danger main button-margin-all"
+          >
+            Delete This Fact
+          </button>
+        </div>
       </div>
     );
   }

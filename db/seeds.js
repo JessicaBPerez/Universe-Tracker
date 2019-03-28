@@ -55,18 +55,18 @@ const gammaRayBurstsInfo = new Info({
 
 const wormHoleInfo = new Info({
     infoImg: "https://roseramblesdotorg.files.wordpress.com/2018/12/5b73c7896940047961d6ab61e69637d7.jpg",
-    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
+    randomFacts: "If traversable wormholes exist (wormholes that could be crossed in both directions), they could allow time travel. A proposed time-travel machine using a traversable wormhole would hypothetically work in the following way: One end of the wormhole is accelerated to some significant fraction of the speed of light, perhaps with some advanced propulsion system, and then brought back to the point of origin.",
     nextMajorEvent: "Unknown.",
-    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
+    eventDescription: "According to current theories on the nature of wormholes, construction of a traversable wormhole would require the existence of a substance with negative energy, often referred to as exotic matter. More technically, the wormhole spacetime requires a distribution of energy that violates various energy conditions, such as the null energy condition along with the weak, strong, and dominant energy conditions.",
     threatLevel: "Very Low"
 })
 
 const quantumEntaglementInfo = new Info({
     infoImg: "https://www.thoughtco.com/thmb/PJWuBLEpSk2Gh6NacYSjRbJIMQI=/2080x1441/filters:fill(auto,1)/GettyImages-623682717-57dd5b693df78c9ccef52b71.jpg",
-    randomFacts: "Scientists think that a gamma ray burst may have been responsible for the Ordovician extinction that occurred 440 million years ago on earth.",
-    nextMajorEvent: "Unknown.",
-    eventDescription: "Although the chances are very low that a gamma ray burst will occur on earth, the long-term effects of such an event would be dangerous. Our ozone layer would delplete as much as 25-35% causing dangerously high UV levels to penetrate the earth. This would cause a chain reaction that would create nitrogen oxide which would produce photochemical smog and effect photosynthesis.",
-    threatLevel: "Very Low"
+    randomFacts: "Photon particles display quantum entanglement through nonlocality. Nonlocality describes the apparent ability of objects to instantaneously know about each other’s state, even when separated by large distances (potentially even billions of light years), almost as if the universe at large instantaneously arranges its particles in anticipation of future events. This implies that instantaneous action or transfer of information does appear to be possible.",
+    nextMajorEvent: "Now.",
+    eventDescription: "The measurement of one photon particle will instantaneously influence the properties of the other entangled particle. This means that the values of these properties will be highly correlated—so highly correlated, in fact, that the degree of coincidence in their values can’t really be explained without recourse to quantum mechanics. This means that information is being instantaneously passed all of the time, what the effects of this possibility is unknown currently.",
+    threatLevel: "None"
 })
 
 const fermiParadoxInfo = new Info({
@@ -134,18 +134,18 @@ const gammaRayBursts = new UniverseEvent({
 const wormHole = new UniverseEvent({
     eventImg: "https://roseramblesdotorg.files.wordpress.com/2018/12/5b73c7896940047961d6ab61e69637d7.jpg",
     eventName: "Worm Holes",
-    eventCategoryThreat: "Moderate",
-    eventLocation: "Earth",
-    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    eventCategoryThreat: "Low",
+    eventLocation: "Unknown",
+    eventDescription: "A wormhole is a theoretical passage through space-time that could create shortcuts for long journeys across the universe. Wormholes bring with them the dangers of sudden collapse, high radiation and dangerous contact with exotic matter.",
     additionalInfo: [wormHoleInfo]
 })
 
 const quantumEntaglement = new UniverseEvent({
     eventImg: "https://www.thoughtco.com/thmb/PJWuBLEpSk2Gh6NacYSjRbJIMQI=/2080x1441/filters:fill(auto,1)/GettyImages-623682717-57dd5b693df78c9ccef52b71.jpg",
     eventName: "Quantum Entanglement",
-    eventCategoryThreat: "Moderate",
-    eventLocation: "Earth",
-    eventDescription: "Gamma Ray Bursts are the brightest electromagnetic blasts known to occur in the Universe and can originate from the collapse of the most massive stars or from the collision of two neutron stars.",
+    eventCategoryThreat: "None",
+    eventLocation: "Everywhere",
+    eventDescription: "Quantum entanglement is a physical phenomenon that occurs when pairs or groups of particles are generated, interact, or share spatial proximity in ways such that the quantum state of each particle cannot be described independently of the state of the other(s), even when the particles are separated by a large distance.",
     additionalInfo: [quantumEntaglementInfo]
 })
 

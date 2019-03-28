@@ -90,7 +90,7 @@ class AdditionalInfoList extends Component {
       (additionalInfo, index) => {
         return (
           <div>
-            <div key={index}>{additionalInfo.eventDescription}</div>
+            <div key={index}>Random</div>
             <section
               className=" card-margin card-style"
               style={{
@@ -112,7 +112,7 @@ class AdditionalInfoList extends Component {
                       additionalInfo._id
                     }`}
                   >
-                    <p className="additional-facts">Additional Info</p>
+                    <p className="additional-facts">Delete This Fact / Comment</p>
                   </Link>
                   <p>
                     <strong>Random Fact: </strong>
@@ -138,8 +138,8 @@ class AdditionalInfoList extends Component {
       }
     );
     return (
-      <div>
-        <h1>Hi Additonal List</h1>
+      <div >
+        <h1 className="container">Want to add your own facts or comments about this topic? Just fill the information out below.</h1>
         <div class="card-container">{additionalInfos}</div>
         <button
           className="btn btn-light button-margin-all"
@@ -175,7 +175,7 @@ class AdditionalInfoList extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="nextMajorEvent">Event Description</label>
+                    <label htmlFor="nextMajorEvent">Event Description / Comments</label>
                     <textarea
                       className="form-control"
                       id="nextMajorEvent"
