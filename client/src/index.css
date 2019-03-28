@@ -456,3 +456,16 @@ button:focus {
 .border-style {
     border-style: none;
 }
+
+.rover-caption {
+    font-family: "Megrim"!important;
+    font-size: 3rem!important;
+}
+
+.rover-small {
+    font-size: 1.5rem;
+}
+
+.rover-img {
+    border-color: 1px whitesmoke;
+}

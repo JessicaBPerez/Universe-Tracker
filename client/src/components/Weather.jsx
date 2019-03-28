@@ -1,8 +1,5 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import atlanta from "../images/Atlanta.jpg";
 import atlanta2 from "../images/atlanta-skyline.jpg";
 const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -40,7 +37,6 @@ class Weather extends Component {
             response.data.list[2].weather[0].description,
           actualWeatherDay3Icon: response.data.list[2].weather[0].icon
         });
-        console.log(response.data);
       })
       .catch(err => {
         console.log("You didn't get the weather!", err);
@@ -90,6 +86,7 @@ class Weather extends Component {
                   src={`http://openweathermap.org/img/w/${
                     this.state.actualWeatherDay1Icon
                   }.png`}
+                  alt="weather icon"
                   style={{ width: "80px" }}
                 />
               </div>
@@ -102,6 +99,7 @@ class Weather extends Component {
                   src={`http://openweathermap.org/img/w/${
                     this.state.actualWeatherDay2Icon
                   }.png`}
+                  alt="weather icon"
                   style={{ width: "80px" }}
                 />
               </div>
@@ -115,6 +113,7 @@ class Weather extends Component {
                   src={`http://openweathermap.org/img/w/${
                     this.state.actualWeatherDay2Icon
                   }.png`}
+                  alt="weather icon"
                   style={{ width: "80px" }}
                 />
               </div>

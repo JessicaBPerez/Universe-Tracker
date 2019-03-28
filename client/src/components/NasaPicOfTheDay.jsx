@@ -16,7 +16,6 @@ export default class NasaPicOfTheDay extends Component {
     axios
       .get(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`)
       .then(response => {
-        console.log(response.data);
         this.setState({
           nasaPicDaily: response.data
         });
