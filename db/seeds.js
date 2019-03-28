@@ -54,7 +54,7 @@ const gammaRayBurstsInfo = new Info({
 })
 
 const wormHoleInfo = new Info({
-    infoImg: "https://roseramblesdotorg.files.wordpress.com/2018/12/5b73c7896940047961d6ab61e69637d7.jpg",
+    infoImg: "https://cdn.images.express.co.uk/img/dynamic/151/590x/wormhole-milky-way-819741.jpg",
     randomFacts: "If traversable wormholes exist (wormholes that could be crossed in both directions), they could allow time travel. A proposed time-travel machine using a traversable wormhole would hypothetically work in the following way: One end of the wormhole is accelerated to some significant fraction of the speed of light, perhaps with some advanced propulsion system, and then brought back to the point of origin.",
     nextMajorEvent: "Unknown.",
     eventDescription: "According to current theories on the nature of wormholes, construction of a traversable wormhole would require the existence of a substance with negative energy, often referred to as exotic matter. More technically, the wormhole spacetime requires a distribution of energy that violates various energy conditions, such as the null energy condition along with the weak, strong, and dominant energy conditions.",
@@ -62,7 +62,7 @@ const wormHoleInfo = new Info({
 })
 
 const quantumEntaglementInfo = new Info({
-    infoImg: "https://www.thoughtco.com/thmb/PJWuBLEpSk2Gh6NacYSjRbJIMQI=/2080x1441/filters:fill(auto,1)/GettyImages-623682717-57dd5b693df78c9ccef52b71.jpg",
+    infoImg: "https://static.interestingengineering.com/images/JULY/sizes/quantum-entanglement-18-qubit_resize_md.jpg",
     randomFacts: "Photon particles display quantum entanglement through nonlocality. Nonlocality describes the apparent ability of objects to instantaneously know about each other’s state, even when separated by large distances (potentially even billions of light years), almost as if the universe at large instantaneously arranges its particles in anticipation of future events. This implies that instantaneous action or transfer of information does appear to be possible.",
     nextMajorEvent: "Now.",
     eventDescription: "The measurement of one photon particle will instantaneously influence the properties of the other entangled particle. This means that the values of these properties will be highly correlated—so highly correlated, in fact, that the degree of coincidence in their values can’t really be explained without recourse to quantum mechanics. This means that information is being instantaneously passed all of the time, what the effects of this possibility is unknown currently.",
@@ -70,7 +70,7 @@ const quantumEntaglementInfo = new Info({
 })
 
 const fermiParadoxInfo = new Info({
-    infoImg: "https://thenypost.files.wordpress.com/2016/06/160616-fermi-paradox-solved-index.jpg?quality=90&strip=all",
+    infoImg: "https://i.pinimg.com/originals/01/d3/bc/01d3bc4540d243701e1df3bc44ad0256.png",
     randomFacts: "According to the Great Filter theory, there is some major hurdle that keeps advanced civilizations from reaching the stage where they could be discovered. So what about our advanced civilization? Either we are approaching our own great filter – meaning we’re barreling toward an extinction-level event – or we've already past it, meaning we are, indeed, alone in the universe.Even scarier ? It may be that sufficiently advanced civilizations don 't annihilate themselves, but others. There may be forces out there that exterminate advanced civilizations. For this reason, Stephen Hawking recommends that we don't broadcast our presence to the universe– whatever is out there, it 's better if they don't find out about us.",
     nextMajorEvent: "Unknown.",
     eventDescription: "It may be that intelligent life exists, but it's just too expensive, complicated, and difficult for them to want to bother traveling. Alternately, they may just not want to come find us – we can 't assume all intelligent life would be as curious or as nomadic as we are.  Some scientists have argued that as life forms become more advanced, they may also become more isolated, preferring virtual reality worlds to space exploration. ",
