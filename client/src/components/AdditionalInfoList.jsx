@@ -76,6 +76,15 @@ class AdditionalInfoList extends Component {
       });
   };
 
+  //Toggles the form
+  displayAdditionalInfoForm = () => {
+    this.setState((state, props) => {
+      return {
+        isAdditionalInfoFormDisplayed: !state.isAdditionalInfoFormDisplayed
+      };
+    });
+  };
+
   render() {
     const additionalInfos = this.state.additionalFacts.map(
       (additionalInfo, index) => {
@@ -98,12 +107,13 @@ class AdditionalInfoList extends Component {
                 />
                 <div className="card-body">
                   <p className="link-name" />
-                <Link
-                     to={`/events/${this.props.match.params.id}/info/${
-                     additionalInfo._id}`}
-                     >
+                  <Link
+                    to={`/events/${this.props.match.params.id}/info/${
+                      additionalInfo._id
+                    }`}
+                  >
                     <p className="additional-facts">Additional Info</p>
-                </Link>
+                  </Link>
                   <p>
                     <strong>Random Fact: </strong>
                     {additionalInfo.randomFacts}
@@ -129,76 +139,89 @@ class AdditionalInfoList extends Component {
     );
     return (
       <div>
-        <div class="card-container">{additionalInfos}</div>
-        <div>
-          <form onSubmit={this.createANewFact}>
-            <div className="form-group">
-              <label htmlFor="infoImg">Fact Image</label>
-              <input
-                className="form-control"
-                id="infoImg"
-                type="text"
-                name="infoImg"
-                onChange={this.handleFormChange}
-                value={this.state.newFacts.infoImg}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="randomFacts">Event Name</label>
-              <input
-                className="form-control"
-                id="randomFacts"
-                type="text"
-                name="randomFacts"
-                onChange={this.handleFormChange}
-                value={this.state.newFacts.randomFacts}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="nextMajorEvent">Event Description</label>
-              <textarea
-                className="form-control"
-                id="nextMajorEvent"
-                type="text"
-                name="nextMajorEvent"
-                onChange={this.handleFormChange}
-                value={this.state.newFacts.nextMajorEvent}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="eventDescription">Event Threat</label>
-              <input
-                className="form-control"
-                id="eventDescription"
-                type="text"
-                name="eventDescription"
-                onChange={this.handleFormChange}
-                value={this.state.newFacts.eventDescription}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="threatLevel">Event Location</label>
-              <input
-                className="form-control"
-                id="threatLevel"
-                type="text"
-                name="threatLevel"
-                onChange={this.handleFormChange}
-                value={this.state.newFacts.threatLevel}
-              />
-            </div>
-            <div className="form-group">
-              <button
-                className="btn btn-primary btn-block"
-                type="submit"
-                value="submit"
-              >
-                Add New Fact
-              </button>
-            </div>
-          </form>
-        </div>
         <h1>Hi Additonal List</h1>
+        <div class="card-container">{additionalInfos}</div>
+        <button
+          className="btn btn-light button-margin-all"
+          onClick={this.displayAdditionalInfoForm}
+        >
+          Display Add Fact/Comment Form
+        </button>
+        <div>
+          <section className="clean-block clean-form dark button-margin-all">
+            <div className="container">
+              {this.state.isAdditionalInfoFormDisplayed ? (
+                <form onSubmit={this.createANewFact}>
+                  <div className="form-group">
+                    <label htmlFor="infoImg">Fact Image</label>
+                    <input
+                      className="form-control"
+                      id="infoImg"
+                      type="text"
+                      name="infoImg"
+                      onChange={this.handleFormChange}
+                      value={this.state.newFacts.infoImg}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="randomFacts">Event Name</label>
+                    <input
+                      className="form-control"
+                      id="randomFacts"
+                      type="text"
+                      name="randomFacts"
+                      onChange={this.handleFormChange}
+                      value={this.state.newFacts.randomFacts}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="nextMajorEvent">Event Description</label>
+                    <textarea
+                      className="form-control"
+                      id="nextMajorEvent"
+                      type="text"
+                      name="nextMajorEvent"
+                      onChange={this.handleFormChange}
+                      value={this.state.newFacts.nextMajorEvent}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="eventDescription">Event Threat</label>
+                    <input
+                      className="form-control"
+                      id="eventDescription"
+                      type="text"
+                      name="eventDescription"
+                      onChange={this.handleFormChange}
+                      value={this.state.newFacts.eventDescription}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="threatLevel">Event Location</label>
+                    <input
+                      className="form-control"
+                      id="threatLevel"
+                      type="text"
+                      name="threatLevel"
+                      onChange={this.handleFormChange}
+                      value={this.state.newFacts.threatLevel}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <button
+                      className="btn btn-dark btn-block"
+                      type="submit"
+                      value="submit"
+                    >
+                      Add New Fact
+                    </button>
+                  </div>
+                </form>
+              ) : null}
+            </div>
+          </section>
+        </div>
       </div>
     );
   }

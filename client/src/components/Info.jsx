@@ -103,7 +103,6 @@ class Info extends Component {
         <div>
           <h1>Delete or Edit this Fact</h1>
         </div>
-  
 
         <div
           className=" justify-content-center container"
@@ -151,14 +150,14 @@ class Info extends Component {
               </button>
               <button
                 onClick={this.displayEventEditForm}
-                className="btn btn-outline-info button-margin"
+                className="btn btn-outline-light button-margin"
               >
                 Show Edit Form
               </button>
             </div>
           </div>
         </div>
-       
+
         <div>
           <br />
           <br />
@@ -227,10 +226,9 @@ class Info extends Component {
                   </div>
                   <div className="form-group">
                     <button
-                      className="btn btn-outline-info btn-block"
+                      className="btn btn-dark btn-block"
                       type="submit"
                       value="submit"
-                      value="Show Modal"
                     >
                       Edit Event
                     </button>

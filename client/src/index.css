@@ -162,7 +162,7 @@ p {
 /*Form for New Page CSS*/
 
 .clean-block.clean-form form {
-    border-top: 3px solid rgb(49, 177, 154);
+    border-top: 3px solid rgb(127, 137, 135);
     background-color: #fff;
     max-width: 500px;
     margin: auto;
@@ -322,4 +322,8 @@ button:focus {
     font-family: "megrim";
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+.button-margin-all {
+    margin-top: 2rem;
 }

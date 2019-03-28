@@ -132,7 +132,6 @@ class UniverseEvents extends Component {
                     <strong>Event Description: </strong>
                     {event.eventDescription}
                   </p>
-                
                 </div>
               </div>
             </section>
@@ -147,13 +146,13 @@ class UniverseEvents extends Component {
         <h1>Want to add a new Universe Event? You can! Click Below</h1>
 
         <button
-          className="btn btn-primary "
+          className="btn btn-light "
           onClick={this.displayUniverseEventForm}
         >
           Display Add Event Form
         </button>
         <div>
-          <section className="clean-block clean-form dark">
+          <section className="clean-block clean-form dark button-margin-all">
             <div className="container">
               {this.state.isUniverseEventFormDisplayed ? (
                 <form onSubmit={this.createAnEvent}>
@@ -214,7 +213,7 @@ class UniverseEvents extends Component {
                   </div>
                   <div className="form-group">
                     <button
-                      className="btn btn-primary btn-block"
+                      className="btn btn-dark btn-block"
                       type="submit"
                       value="submit"
                     >
