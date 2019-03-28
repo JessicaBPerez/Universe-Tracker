@@ -100,7 +100,7 @@ class Info extends Component {
     return (
       <div>
         <div>
-          <h1 className="container glitch button-margin-all">
+          <h1 className="glitch button-margin-all font-style">
             Delete or Edit this Fact
           </h1>
         </div>

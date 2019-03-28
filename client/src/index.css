@@ -432,3 +432,23 @@ button:focus {
         top: 100%;
     }
 }
+
+
+/* Weather CSS */
+
+.weather {
+    background-color: whitesmoke;
+}
+
+.atlanta {
+    font-family: "Josefin sans"!important;
+    font-size: 4rem;
+}
+
+.atlanta-small {
+    font-family: "Josefin sans"!important;
+}
+
+.font-style {
+    font-family: "Orbitron" !important;
+}

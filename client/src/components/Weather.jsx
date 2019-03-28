@@ -1,9 +1,9 @@
-/* eslint-disable jsx-a11y/heading-has-content */
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import atlanta from "../images/Atlanta.jpg";
+import atlanta2 from "../images/atlanta-skyline.jpg";
 const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-// var iconurl = `http://openweathermap.org/img/w/" + ${01n} + .png`;
 
 class Weather extends Component {
   state = {
@@ -24,14 +24,22 @@ class Weather extends Component {
         this.setState({
           weatherCity: response.data.city,
           weatherList: response.data.list,
-          weatherMain: response.data.list[0].main,
+          weatherMain: response.data.list[0].main.humidity,
           weatherMain2: response.data.list[1].main,
-          actualWeatherDay1Description: response.data.list[0].weather[0].description,
+          actualWeatherDay1Description:
+            response.data.list[0].weather[0].description,
           actualWeatherDay1Icon: response.data.list[0].weather[0].icon,
+          actualWeatherDay1Main: response.data.list[0].weather[0].main,
           actualWeatherDay2: response.data.list[1].weather[0],
-          actualWeatherDay3: response.data.list[2].weather[0]
+          actualWeatherDay3: response.data.list[2].weather[0],
+          actualweatherDay2Description:
+            response.data.list[1].weather[0].description,
+          actualWeatherDay2Icon: response.data.list[1].weather[0].icon,
+          actualWeatherDay3Description:
+            response.data.list[2].weather[0].description,
+          actualWeatherDay3Icon: response.data.list[2].weather[0].icon
         });
-        console.log(response.data)
+        console.log(response.data);
       })
       .catch(err => {
         console.log("You didn't get the weather!", err);
@@ -40,25 +48,62 @@ class Weather extends Component {
   render() {
     return (
       <div>
-        {/* {this.state.weather.map(weather => {
-          return <div>City: {this.state.weather.list.city}</div>;
-        })} */}
-
-        <h1> Where weather page will go.</h1>
-        {/* <h1 className="text-white">{this.state.weather.cnt}</h1>
-        <h1 className="text-white">{this.state.weather.cnt}</h1> */}
-        <h1>{this.state.weatherCity.name}</h1>
-        <h1>{this.state.weatherCity.country}</h1>
-        <h1>{this.state.weatherCity.id}</h1>
-
-        {this.state.actualWeatherDay1Description}
-        <img src={this.state.actualWeatherDay1Icon} />
-        {this.state.actualWeatherDay1Icon}
-        {/* <h1>{this.state.actualWeatherDay1.description}</h1> */}
-        {this.state.weatherList.map(weather => {
-          return <div>{weather.dt}</div>;
-        })}
-        {/* <h1 className="text-white">{this.state.weather}</h1> */}
+        <h1 className="glitch button-margin-all font-style">
+          {" "}
+          Weather in Real-Time
+        </h1>
+        <div
+          className="w3-card-4 w3-margin margin weather justify-content-center"
+          style={{ width: "50%", alignItems: "center" }}
+        >
+          <div className="w3-display-container w3-text-white justify-content-center">
+            <img src={atlanta2} alt="Lights" style={{ width: "100%" }} />
+            <div className="w3-xlarge w3-display-bottomleft w3-padding">
+              <h1 className="atlanta">{this.state.weatherCity.name}</h1>
+              <br />
+              <h3 className="atlanta-small">
+                Humidity: {this.state.weatherMain}
+              </h3>
+            </div>
+          </div>
+          <div className="w3-row">
+            <div className="w3-third w3-center">
+              <h3 className="atlanta-small button-margin-all">
+                {" "}
+                {this.state.actualWeatherDay1Description}
+              </h3>
+              <img
+                src={`http://openweathermap.org/img/w/${
+                  this.state.actualWeatherDay1Icon
+                }.png`}
+                style={{ width: "80px" }}
+              />
+            </div>
+            <div className="w3-third w3-center">
+              <h3 className="atlanta-small button-margin-all">
+                {this.state.actualweatherDay2Description}
+              </h3>
+              <img
+                src={`http://openweathermap.org/img/w/${
+                  this.state.actualWeatherDay2Icon
+                }.png`}
+                style={{ width: "80px" }}
+              />
+            </div>
+            <div className="w3-third w3-center w3-margin-bottom">
+              <h3 className="atlanta-small button-margin-all">
+                {" "}
+                {this.state.actualWeatherDay3Description}
+              </h3>
+              <img
+                src={`http://openweathermap.org/img/w/${
+                  this.state.actualWeatherDay2Icon
+                }.png`}
+                style={{ width: "80px" }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

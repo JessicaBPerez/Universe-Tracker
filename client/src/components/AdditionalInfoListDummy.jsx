@@ -50,7 +50,7 @@ class AdditionalInfoListDummy extends Component {
     }
     return (
       <div>
-        <h1 className="container glitch button-margin-all">
+        <h1 className="glitch button-margin-all font-style">
           Changed your mind about this note / fact? No probem, just delete it
           below.
         </h1>
