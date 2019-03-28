@@ -92,7 +92,6 @@ class Info extends Component {
     this.getIndividualEvent();
   }
 
-
   render() {
     if (this.state.redirectToHome) {
       return <Redirect to="/" />;
@@ -101,9 +100,10 @@ class Info extends Component {
     return (
       <div>
         <div>
-          <h1>Delete or Edit this Fact</h1>
+          <h1 className="container glitch button-margin-all">
+            Delete or Edit this Fact
+          </h1>
         </div>
-
         <div
           className=" justify-content-center container"
           style={{ width: "90rem" }}
@@ -118,11 +118,9 @@ class Info extends Component {
             </div>
             <div className="col-md-6 category-design text-white">
               <h3>{this.state.info.eventName}</h3>
-
               <Link to={`${this.state.info._id}/info`}>
                 <p className="additional-facts">Additional Facts</p>
               </Link>
-
               <div>
                 <p>
                   <strong>Event Category Threat: </strong>
@@ -157,7 +155,6 @@ class Info extends Component {
             </div>
           </div>
         </div>
-
         <div>
           <br />
           <br />
@@ -188,9 +185,7 @@ class Info extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventDescription">
-                      Event Description
-                    </label>
+                    <label htmlFor="eventDescription">Event Description</label>
                     <textarea
                       className="form-control"
                       id="eventDescription"
@@ -201,9 +196,7 @@ class Info extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventCategoryThreat">
-                      Event Threat
-                    </label>
+                    <label htmlFor="eventCategoryThreat">Event Threat</label>
                     <input
                       className="form-control"
                       id="eventCategoryThreat"

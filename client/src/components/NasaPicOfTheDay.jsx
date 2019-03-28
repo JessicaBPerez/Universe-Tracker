@@ -29,7 +29,9 @@ export default class NasaPicOfTheDay extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-white">Nasa Pic of the Day</h1>
+        <h1 className="container glitch button-margin-all">
+          Nasa Pic of the Day
+        </h1>
         <div
           className=" justify-content-center container"
           style={{ width: "90rem" }}

@@ -51,11 +51,10 @@ class AdditionalInfoListDummy extends Component {
     }
     return (
       <div>
-        <h1 className="container">
+        <h1 className="container glitch button-margin-all">
           Changed your mind about this note / fact? No probem, just delete it
           below.
         </h1>
-
         <div
           className=" justify-content-center container"
           style={{ width: "90rem" }}

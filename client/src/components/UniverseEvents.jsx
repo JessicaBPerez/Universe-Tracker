@@ -99,7 +99,9 @@ class UniverseEvents extends Component {
       let pathname = `/events/${event._id}`;
       return (
         <div>
-          <h2 className="text-white">{event.eventName}</h2>
+          <h2 className="text-white glitch button-margin-all">
+            {event.eventName}
+          </h2>
           <div>
             <section
               className=" card-margin card-style"
@@ -141,12 +143,10 @@ class UniverseEvents extends Component {
     return (
       <div>
         <div class="card-container">{events}</div>
-
-        <h1 className="container">
+        <h1 className="container glitch button-margin-all">
           Want to add your own Universe Event? Click Below and fill out the
           card.
         </h1>
-
         <button
           className="btn btn-light "
           onClick={this.displayUniverseEventForm}
@@ -181,9 +181,7 @@ class UniverseEvents extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventDescription">
-                      Event Description
-                    </label>
+                    <label htmlFor="eventDescription">Event Description</label>
                     <textarea
                       className="form-control"
                       id="eventDescription"
@@ -194,9 +192,7 @@ class UniverseEvents extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventCategoryThreat">
-                      Event Threat
-                    </label>
+                    <label htmlFor="eventCategoryThreat">Event Threat</label>
                     <input
                       className="form-control"
                       id="eventCategoryThreat"

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
 import { Link, Redirect } from "react-router-dom";
-import AdditionalInfo from "./AdditionalInfo";
-import AdditionalInfoListDummy from "./AdditionalInfoListDummy";
 
 class AdditionalInfoList extends Component {
   state = {
@@ -90,7 +87,7 @@ class AdditionalInfoList extends Component {
       (additionalInfo, index) => {
         return (
           <div>
-            <div key={index}>Random</div>
+            <div key={index} />
             <section
               className=" card-margin card-style"
               style={{
@@ -112,7 +109,9 @@ class AdditionalInfoList extends Component {
                       additionalInfo._id
                     }`}
                   >
-                    <p className="additional-facts">Delete This Fact / Comment</p>
+                    <p className="additional-facts">
+                      Delete This Fact / Comment
+                    </p>
                   </Link>
                   <p>
                     <strong>Random Fact: </strong>
@@ -138,8 +137,11 @@ class AdditionalInfoList extends Component {
       }
     );
     return (
-      <div >
-        <h1 className="container">Want to add your own facts or comments about this topic? Just fill the information out below.</h1>
+      <div>
+        <h1 className=" container glitch button-margin-all font-style">
+          Want to add your own facts or comments about this topic? Just fill the
+          information out below.
+        </h1>
         <div class="card-container">{additionalInfos}</div>
         <button
           className="btn btn-light button-margin-all"
@@ -175,7 +177,9 @@ class AdditionalInfoList extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="nextMajorEvent">Event Description / Comments</label>
+                    <label htmlFor="nextMajorEvent">
+                      Event Description / Comments
+                    </label>
                     <textarea
                       className="form-control"
                       id="nextMajorEvent"
