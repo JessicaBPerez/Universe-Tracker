@@ -12,7 +12,7 @@ The goal of this project was to utilize our knowledge of React, the Mongo databa
 
 ## Wireframes
 
-![Universe TrackerFacts](/images/Fact.png)
+![Universe Tracker Facts](src/images/Fact.png)
 
 ## ERD
 
