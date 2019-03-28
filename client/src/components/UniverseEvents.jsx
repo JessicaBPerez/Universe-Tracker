@@ -142,7 +142,7 @@ class UniverseEvents extends Component {
     return (
       <div>
         <div class="card-container">{events}</div>
-        <h1 className="container glitch button-margin-all">
+        <h1 className="container glitch button-margin-all font-style">
           Want to add your own Universe Event? Click Below and fill out the
           card.
         </h1>

@@ -452,3 +452,7 @@ button:focus {
 .font-style {
     font-family: "Orbitron" !important;
 }
+
+.border-style {
+    border-style: none;
+}

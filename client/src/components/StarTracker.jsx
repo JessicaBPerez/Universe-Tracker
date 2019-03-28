@@ -16,7 +16,9 @@ class StarTracker extends Component {
   render() {
     return (
       <div>
-        <h1>Star StarTracker</h1>
+        <h1 className="glitch button-margin-all font-style">
+          Star StarTracker
+        </h1>
       </div>
     );
   }

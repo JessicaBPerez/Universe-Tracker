@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -73,6 +74,7 @@ class Weather extends Component {
                 {this.state.actualWeatherDay1Description}
               </h3>
               <img
+                className="border-style"
                 src={`http://openweathermap.org/img/w/${
                   this.state.actualWeatherDay1Icon
                 }.png`}
@@ -84,6 +86,7 @@ class Weather extends Component {
                 {this.state.actualweatherDay2Description}
               </h3>
               <img
+                className="border-style"
                 src={`http://openweathermap.org/img/w/${
                   this.state.actualWeatherDay2Icon
                 }.png`}
@@ -96,6 +99,7 @@ class Weather extends Component {
                 {this.state.actualWeatherDay3Description}
               </h3>
               <img
+                className="border-style"
                 src={`http://openweathermap.org/img/w/${
                   this.state.actualWeatherDay2Icon
                 }.png`}
