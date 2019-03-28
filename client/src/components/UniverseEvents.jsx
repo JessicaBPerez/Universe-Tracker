@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import Info from "./Info.jsx";
 
 class UniverseEvents extends Component {
   state = {

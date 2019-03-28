@@ -12,7 +12,6 @@ class AdditionalInfoListDummy extends Component {
   }
 
   componentDidMount = () => {
-    console.log("HEY!!!");
     this.getSingleFact();
   };
 
@@ -88,12 +87,14 @@ class AdditionalInfoListDummy extends Component {
               </div>
             </div>
           </div>
-          <button
-            onClick={this.deleteAnInfo}
-            className="btn btn-outline-danger main button-margin-all"
-          >
-            Delete This Fact
-          </button>
+          <div>
+            <button
+              onClick={this.deleteAnInfo}
+              className="btn btn-outline-danger main button-margin-all"
+            >
+              Delete This Fact
+            </button>
+          </div>
         </div>
       </div>
     );
