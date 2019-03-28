@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -22,7 +23,13 @@ class Weather extends Component {
         // console.log(response.data);
         this.setState({
           weatherCity: response.data.city,
-          weatherList: response.data.list
+          weatherList: response.data.list,
+          weatherMain: response.data.list[0].main,
+          weatherMain2: response.data.list[1].main,
+          actualWeatherDay1Description: response.data.list[0].weather[0].description,
+          actualWeatherDay1Icon: response.data.list[0].weather[0].icon,
+          actualWeatherDay2: response.data.list[1].weather[0],
+          actualWeatherDay3: response.data.list[2].weather[0]
         });
         console.log(response.data)
       })
@@ -41,6 +48,16 @@ class Weather extends Component {
         {/* <h1 className="text-white">{this.state.weather.cnt}</h1>
         <h1 className="text-white">{this.state.weather.cnt}</h1> */}
         <h1>{this.state.weatherCity.name}</h1>
+        <h1>{this.state.weatherCity.country}</h1>
+        <h1>{this.state.weatherCity.id}</h1>
+
+        {this.state.actualWeatherDay1Description}
+        <img src={this.state.actualWeatherDay1Icon} />
+        {this.state.actualWeatherDay1Icon}
+        {/* <h1>{this.state.actualWeatherDay1.description}</h1> */}
+        {this.state.weatherList.map(weather => {
+          return <div>{weather.dt}</div>;
+        })}
         {/* <h1 className="text-white">{this.state.weather}</h1> */}
       </div>
     );

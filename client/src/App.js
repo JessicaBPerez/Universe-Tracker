@@ -10,7 +10,6 @@ import Weather from "./components/Weather";
 import AdditionalInfoList from "./components/AdditionalInfoList";
 import AdditionalInfoListDummy from "./components/AdditionalInfoListDummy";
 
-// import UniverseEventsIndividual from "./components/UniverseEventsIndividual";
 
 class App extends Component {
   constructor(props) {
