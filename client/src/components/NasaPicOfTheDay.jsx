@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from "react";
 import axios from "axios";
+import enceladus from "../audio/Enceladus_Hiss_audio.mp3";
 const NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
 export default class NasaPicOfTheDay extends Component {
@@ -59,6 +60,9 @@ export default class NasaPicOfTheDay extends Component {
               </div>
             </div>
           </div>
+        </div>
+        <div className="button-margin-all audio-margin">
+          <audio src={enceladus} controls autoPlay />
         </div>
       </div>
     );

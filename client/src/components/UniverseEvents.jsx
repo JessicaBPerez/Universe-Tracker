@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import spaceSounds from "../audio/plasmawaves_chorus.mp3";
 
 class UniverseEvents extends Component {
   state = {
@@ -141,7 +142,10 @@ class UniverseEvents extends Component {
     });
     return (
       <div>
-        <div class="card-container">{events}</div>
+        <div className="card-container">{events}</div>
+        <div className="button-margin-all">
+          <audio src={spaceSounds} controls autoPlay />
+        </div>
         <h1 className="container glitch button-margin-all font-style">
           Want to add your own Universe Event? Click Below and fill out the
           card.

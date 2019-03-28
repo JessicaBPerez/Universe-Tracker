@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import armstrong from "../audio/Armstrong.mp3";
 const NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
 class StarTracker extends Component {
@@ -47,7 +48,6 @@ class StarTracker extends Component {
           <h1 className="glitch button-margin-all font-style">
             Mars Rover Tracker
           </h1>
-
           <div class="card bg-dark text-white button-margin-all">
             <img
               src={this.state.marsRover1Photo}
@@ -106,6 +106,9 @@ class StarTracker extends Component {
               </p>
             </div>
           </div>
+        </div>
+        <div className="button-margin-all">
+          <audio src={armstrong} controls autoPlay />
         </div>
       </div>
     );

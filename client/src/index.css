@@ -469,3 +469,7 @@ button:focus {
 .rover-img {
     border-color: 1px whitesmoke;
 }
+
+.audio-margin {
+    margin-top: 13rem;
+}
