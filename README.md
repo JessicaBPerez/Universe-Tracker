@@ -12,7 +12,7 @@ The goal of this project was to utilize our knowledge of React, the Mongo databa
 
 ## Wireframes
 
-<img src= "images/Fact.png" alt="Bespoke MacBook Wireframe"/>
+![Universe TrackerFacts](/images/Fact.png)
 
 ## ERD
 
