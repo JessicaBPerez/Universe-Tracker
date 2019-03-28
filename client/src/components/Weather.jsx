@@ -21,7 +21,6 @@ class Weather extends Component {
         `https://api.openweathermap.org/data/2.5/forecast?zip=30303,us&appid=${WEATHER_API_KEY}`
       )
       .then(response => {
-        // console.log(response.data);
         this.setState({
           weatherCity: response.data.city,
           weatherList: response.data.list,

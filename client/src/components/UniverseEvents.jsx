@@ -20,7 +20,6 @@ class UniverseEvents extends Component {
   //Use the componentDidMount lifecycle method
   // to execute our API call as soon as the component mounts
   componentDidMount = () => {
-    console.log("Hey! You got me!!");
     this.getAllEvents();
   };
 
@@ -142,10 +141,12 @@ class UniverseEvents extends Component {
     return (
       <div>
         <div class="card-container">{events}</div>
+
         <h1 className="container">
           Want to add your own Universe Event? Click Below and fill out the
           card.
         </h1>
+
         <button
           className="btn btn-light "
           onClick={this.displayUniverseEventForm}
@@ -180,7 +181,9 @@ class UniverseEvents extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventDescription">Event Description</label>
+                    <label htmlFor="eventDescription">
+                      Event Description
+                    </label>
                     <textarea
                       className="form-control"
                       id="eventDescription"
@@ -191,7 +194,9 @@ class UniverseEvents extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="eventCategoryThreat">Event Threat</label>
+                    <label htmlFor="eventCategoryThreat">
+                      Event Threat
+                    </label>
                     <input
                       className="form-control"
                       id="eventCategoryThreat"
