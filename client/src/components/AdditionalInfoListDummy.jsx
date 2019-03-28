@@ -16,21 +16,6 @@ class AdditionalInfoListDummy extends Component {
     this.getSingleFact();
   };
 
-  //   getSingleFact = () => {
-  //     axios
-  //       .get(
-  //         `/api/events/${this.props.match.params.id}/info/${
-  //           this.props.match.params.infoId
-  //         }`
-  //       )
-  //       .then(response => {
-  //         console.log(response.data);
-  //         this.setState({
-  //           individualInfo: response.data
-  //         });
-  //       });
-  //   };
-
   getSingleFact = () => {
     axios
       .get(

@@ -9,7 +9,7 @@ import StarTracker from "./components/StarTracker.jsx";
 import Weather from "./components/Weather";
 import AdditionalInfoList from "./components/AdditionalInfoList";
 import AdditionalInfoListDummy from "./components/AdditionalInfoListDummy";
-
+import NasaPicOfTheDay from "./components/NasaPicOfTheDay";
 
 class App extends Component {
   constructor(props) {
@@ -59,6 +59,7 @@ class App extends Component {
               />
               <Route exact path="/tracker" component={StarTracker} />
               <Route exact path="/weather" component={Weather} />
+              <Route exact path="/nasadaily" component={NasaPicOfTheDay} />
             </Switch>
           </Router>
         </div>

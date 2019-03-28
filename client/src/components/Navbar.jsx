@@ -50,9 +50,12 @@ class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <a className="nav-link js-scroll-trigger" href="/">
-                    Thank You
-                  </a>
+                  <Link
+                    to={`/nasadaily`}
+                    className="nav-link js-scroll-trigger"
+                  >
+                    Nasa Daily
+                  </Link>
                 </li>
               </ul>
             </div>
