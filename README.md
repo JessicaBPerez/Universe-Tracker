@@ -12,11 +12,21 @@ The goal of this project was to utilize our knowledge of React, the Mongo databa
 
 ## Wireframes
 
+#### Fact Page
+
 https://imgur.com/YHvwnfH
+
+#### Additional Info Page
+
+https://imgur.com/bxZ1sGV
+
+#### Weather Page
+
+https://imgur.com/rsngEMk
 
 ## ERD
 
-<img src= "images/Database_ERD.png" alt="ERD Chart">
+https://imgur.com/alTSmfa
 
 ## Technologies Used
 
