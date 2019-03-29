@@ -15,7 +15,6 @@ The goal of this project was to utilize our knowledge of React, the Mongo databa
 #### Fact Page
 
 https://imgur.com/YHvwnfH
-(https://imgur.com/YHvwnfH)
 
 #### Additional Info Page
 
