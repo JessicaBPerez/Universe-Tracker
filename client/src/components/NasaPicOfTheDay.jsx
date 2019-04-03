@@ -62,7 +62,7 @@ export default class NasaPicOfTheDay extends Component {
           </div>
         </div>
         <div className="button-margin-all audio-margin">
-          <audio src={enceladus} controls autoPlay />
+          <audio src={enceladus} controls />
         </div>
       </div>
     );

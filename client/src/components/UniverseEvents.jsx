@@ -144,7 +144,7 @@ class UniverseEvents extends Component {
       <div>
         <div className="card-container">{events}</div>
         <div className="button-margin-all">
-          <audio src={spaceSounds} controls autoPlay />
+          <audio src={spaceSounds} controls />
         </div>
         <h1 className="container glitch button-margin-all font-style">
           Want to add your own Universe Event? Click Below and fill out the

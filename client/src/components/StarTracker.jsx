@@ -108,7 +108,7 @@ class StarTracker extends Component {
           </div>
         </div>
         <div className="button-margin-all">
-          <audio src={armstrong} controls autoPlay />
+          <audio src={armstrong} controls />
         </div>
       </div>
     );
